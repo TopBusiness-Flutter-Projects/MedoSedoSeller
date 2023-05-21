@@ -114,7 +114,7 @@ class TransactionChartState extends State<TransactionChart> {
                     Row(crossAxisAlignment: CrossAxisAlignment.center,mainAxisAlignment: MainAxisAlignment.center,
                       children: [Row(children: [
                         Icon(Icons.circle,size: Dimensions.ICON_SIZE_SMALL,
-                            color: Color(0xFF4E9BF0)),
+                            color: Color(0xFFF89B1D)),
                         SizedBox(width: Dimensions.PADDING_SIZE_EXTRA_SMALL,),
                         Text(getTranslated('your_earnings', context),
                           style: robotoSmallTitleRegular.copyWith(color: ColorResources.getTextColor(context),

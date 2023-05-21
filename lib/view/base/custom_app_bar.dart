@@ -62,7 +62,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           leading: isBackButtonExist ? IconButton(icon: Icon(Icons.arrow_back_ios, size: Dimensions.ICON_SIZE_DEFAULT),
               color: Theme.of(context).textTheme.bodyText1.color,
             onPressed: () => onBackPressed != null ? onBackPressed() : Navigator.pop(context)) :
-          IconButton(icon: Image.asset(Images.logo, color : Theme.of(context).primaryColor,scale: 5,), onPressed: () {  },),
+          IconButton(icon: Image.asset(Images.logo,scale: 5,), onPressed: () {  },),
           backgroundColor: Theme.of(context).highlightColor,
           elevation: 0,
           actions: isAction? [

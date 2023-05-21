@@ -24,6 +24,7 @@ class TopDeliveryManWidget extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.fromLTRB(Dimensions.PADDING_SIZE_EXTRA_SMALL,0,Dimensions.PADDING_SIZE_EXTRA_SMALL,Dimensions.PADDING_SIZE_EXTRA_SMALL),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
               decoration: BoxDecoration(
@@ -41,7 +42,8 @@ class TopDeliveryManWidget extends StatelessWidget {
                   child: Container(decoration: BoxDecoration(
                     color: Theme.of(context).primaryColor.withOpacity(.10),
                     borderRadius: BorderRadius.circular(100),
-                    border: Border.all(color: Theme.of(context).primaryColor.withOpacity(.1), width: .5)
+                    border: Border.all(color: Theme.of(context).primaryColor.withOpacity(.1),
+                        width: .5)
                   ),
                     width: Provider.of<LocalizationProvider>(context, listen: false).isLtr?  75: 72,
                     height: Provider.of<LocalizationProvider>(context, listen: false).isLtr?  75: 72,
@@ -56,12 +58,13 @@ class TopDeliveryManWidget extends StatelessWidget {
                 ),
                 SizedBox(height: Dimensions.PADDING_SIZE_EXTRA_SMALL,),
                 Padding(padding: const EdgeInsets.symmetric(horizontal: Dimensions.PADDING_SIZE_EXTRA_SMALL),
-                  child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start, children: [
                     Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: Dimensions.PADDING_SIZE_SMALL),
+                      padding: const EdgeInsets.symmetric(horizontal: 6),
                       child: Text(deliveryMan.fName+' '+deliveryMan.lName ?? '',textAlign: TextAlign.center,
-                          style: robotoBold.copyWith(fontSize: Dimensions.FONT_SIZE_LARGE),
-                          maxLines: 1, overflow: TextOverflow.ellipsis),
+                          style: robotoBold.copyWith(fontSize: 12),
+                          ),
                     ),
                     SizedBox(height: Dimensions.PADDING_SEVEN),
 
@@ -71,7 +74,8 @@ class TopDeliveryManWidget extends StatelessWidget {
                   ],),
                 ),
                 Container(
-                  width: MediaQuery.of(context).size.width/2,
+
+                  width: MediaQuery.of(context).size.width,
                   padding: EdgeInsets.symmetric(vertical: Dimensions.PADDING_SIZE_SMALL, horizontal: Dimensions.PADDING_SIZE_SMALL),
                   decoration: BoxDecoration(
                       color: Theme.of(context).primaryColor,

@@ -83,8 +83,10 @@ class _HomePageScreenState extends State<HomePageScreen> {
                 title: Image.asset(Images.logo_with_app_name, height: 35),
               ),
               SliverToBoxAdapter(
-                child: Column(crossAxisAlignment: CrossAxisAlignment.start,
-
+                child: ListView(
+                  //crossAxisAlignment: CrossAxisAlignment.start,
+shrinkWrap: true,
+                  physics: NeverScrollableScrollPhysics(),
                   children: [
                     SizedBox(height: Dimensions.PADDING_SIZE_SMALL),
                     OngoingOrderWidget(callback: widget.callback,),

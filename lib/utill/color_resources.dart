@@ -102,17 +102,18 @@ class ColorResources {
   }
 
   static Color mainCardOneColor(BuildContext context) {
-    return Provider.of<ThemeProvider>(context).darkTheme ? Color(0xFF165AC5) : Color(0xFF165AC5);
+    return Provider.of<ThemeProvider>(context).darkTheme ? Color(0xFFC59215) : Color(0xFFCC9E2E);
+
   }
 
   static Color mainCardTwoColor(BuildContext context) {
-    return Provider.of<ThemeProvider>(context).darkTheme ? Color(0xFF0084CF) : Color(0xFF0084CF);
+    return Provider.of<ThemeProvider>(context).darkTheme ? Color(0xFFD05F01) : Color(0xFFD46E19);
   }
   static Color mainCardThreeColor(BuildContext context) {
-    return Provider.of<ThemeProvider>(context).darkTheme ? Color(0xFF219F61) : Color(0xFF219F61);
+    return Provider.of<ThemeProvider>(context).darkTheme ? Color(0xFF219F60) : Color(0xFF38A971);
   }
   static Color mainCardFourColor(BuildContext context) {
-    return Provider.of<ThemeProvider>(context).darkTheme ? Color(0xFFFF6969) : Color(0xFFFF6969);
+    return Provider.of<ThemeProvider>(context).darkTheme ? Color(0xFFFF696A) : Color(0xFFFE7877);
   }
 
   static Color withdrawCardColor(BuildContext context) {

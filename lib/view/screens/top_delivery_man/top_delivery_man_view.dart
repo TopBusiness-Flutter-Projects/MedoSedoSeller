@@ -50,8 +50,8 @@ class TopDeliveryManView extends StatelessWidget {
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 mainAxisSpacing: 5,
-                crossAxisSpacing: 5,
-                childAspectRatio: MediaQuery.of(context).size.width < 400? 1/1.12: MediaQuery.of(context).size.width < 420? 1/.97 : 1/.95,
+               crossAxisSpacing: 1,
+              //  childAspectRatio: MediaQuery.of(context).size.width < 400? 1/1.1: MediaQuery.of(context).size.width < 420? 1/.97 : 1/.95,
               ),
               padding: EdgeInsets.all(0),
               shrinkWrap: true,

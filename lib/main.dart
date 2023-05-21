@@ -43,7 +43,7 @@ final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin = FlutterL
 Future<void> main() async {
   HttpOverrides.global = new MyHttpOverrides();
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform,);
+  await Firebase.initializeApp( options: DefaultFirebaseOptions.currentPlatform,);
   await FlutterDownloader.initialize(
       debug: true ,
       ignoreSsl: true
