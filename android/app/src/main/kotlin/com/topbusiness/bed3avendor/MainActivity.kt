@@ -1,4 +1,4 @@
-package com.topbusiness.medosedo_vendor_app
+package com.topbusiness.bed3avendor
 
 import io.flutter.embedding.android.FlutterActivity
 
