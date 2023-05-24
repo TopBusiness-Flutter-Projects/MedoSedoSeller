@@ -36,7 +36,7 @@ class Chat {
   int deliveryManId;
   String message;
   int sentByCustomer;
-  int sentByDeliveryMan;
+  dynamic sentByDeliveryMan;
   int seenBySeller;
   String createdAt;
   String updatedAt;
@@ -153,7 +153,7 @@ class Customer {
         });
 
   Customer.fromJson(Map<String, dynamic> json) {
-    id = json['id'];
+    id = json['id']??0;
     fName = json['f_name'];
     lName = json['l_name'];
     phone = json['phone'];

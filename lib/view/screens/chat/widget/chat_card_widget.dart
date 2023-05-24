@@ -22,7 +22,8 @@ class ChatCardWidget extends StatelessWidget {
     Provider.of<SplashProvider>(context, listen: false).baseUrls.deliveryManImageUrl;
 
     int id = Provider.of<ChatProvider>(context, listen: false).userTypeIndex == 0 ?
-    chat.customer.id : chat.deliveryManId;
+    chat.customer!=null?chat.customer.id??chat.deliveryManId:chat.deliveryManId :
+    chat.deliveryManId!=null?chat.deliveryManId:chat.customer.id;
 
     String image = Provider.of<ChatProvider>(context, listen: false).userTypeIndex == 0 ?
     chat.customer != null? chat.customer?.image :'' : chat.deliveryMan?.image;

@@ -203,7 +203,7 @@ class _ProductWidgetState extends State<ShopProductWidget> {
                 spaceBetweenChildren: 4,
                 buttonSize: buttonSize,
                 childrenButtonSize: childrenButtonSize,
-                visible: visible,
+                visible: false,
                 direction: speedDialDirection,
                 switchLabelPosition: switchLabelPosition,
                 closeManually: closeManually,

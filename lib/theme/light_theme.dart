@@ -19,13 +19,13 @@ ThemeData light = ThemeData(
     primary: Color(0xFFFFF4E2),
     secondary: Color(0xFFF89B1D),
     tertiary: Color(0xFFF9D4A8),
-    tertiaryContainer: Color(0xFFADC9F3),
+    tertiaryContainer: Color(0xFFF89B1D),
     onTertiaryContainer: Color(0xFF33AF74),
     primaryContainer: Color(0xFF9AECC6),
     secondaryContainer: Color(0xFFF2F2F2),
     surface: Color(0xFF00FF58),
-    surfaceTint: Color(0xFF0087FF),
-    onPrimary: Color(0xFF67AFFF),
+    surfaceTint: Color(0xFFF89B1D),
+    onPrimary: Color(0xFFF89B1D),
     onSecondary: Color(0xFFFC9926)
   ).copyWith(error: Color(0xFFFF5A5A)),
 );

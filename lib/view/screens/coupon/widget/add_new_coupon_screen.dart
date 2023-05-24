@@ -186,7 +186,7 @@ class _AddNewCouponScreenState extends State<AddNewCouponScreen> {
                   items: coupon.discountTypeList.map((String value) {
                     return DropdownMenuItem<String>(
                       value: value,
-                      child: Text(getTranslated(value, context),
+                      child: Text(value!=null?getTranslated(value, context)!=null?getTranslated(value, context):"":"",
                           style: robotoRegular.copyWith(color: Theme.of(context).textTheme.bodyText1.color)),
                     );
                   }).toList(),

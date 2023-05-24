@@ -153,7 +153,8 @@ class _ProductDetailsWidgetState extends State<ProductDetailsWidget> {
                               CustomText(amount: widget.productModel.purchasePrice, amountValue: true,),
                               CustomText(amount: widget.productModel.unitPrice, amountValue: true,),
                               CustomText(title: widget.productModel.tax.toString(), isPercentage: true, isLocale: false,),
-                              CustomText(title: widget.productModel.taxModel, isPercentage: false, isLocale: true,),
+
+                              CustomText(title:( widget.productModel.taxModel!=null?widget.productModel.taxModel:"0"), isPercentage: false, isLocale: false,),
                               CustomText(amount: widget.productModel.discount, isLocale: false,
                                   title: widget.productModel.discountType == 'percent'? widget.productModel.discount.toString():'0',
                                   amountValue: widget.productModel.discountType == 'flat',isPercentage: widget.productModel.discountType == 'percent'),
@@ -249,8 +250,8 @@ class CustomText extends StatelessWidget {
             isLocale?
             Text(getTranslated(title, context)):
             isPercentage?
-            Text('$title%'):
-            Text(title),
+            Text(title!=null?'$title%':"0"):
+            Text(title!=null?title:"0"),
           ),
         ),
 

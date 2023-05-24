@@ -8,16 +8,16 @@ ThemeData dark = ThemeData(
   highlightColor: Color(0xFF252525),
   hintColor: Color(0xFFc7c7c7),
 
-  colorScheme : const ColorScheme.dark(primary: Color(0xFF64BDF9),
-      secondary: Color(0xFF78BDFC),
+  colorScheme : const ColorScheme.dark(primary: Color(0xFFF89B1D),
+      secondary: Color(0xFFF89B1D),
       tertiary: Color(0xFF865C0A),
       tertiaryContainer: Color(0xFF6C7A8E),
       onTertiaryContainer: Color(0xFF0F5835),
       primaryContainer: Color(0xFF208458),
       secondaryContainer: Color(0xFFF2F2F2),
       surface: Color(0xFF00FF58),
-      surfaceTint: Color(0xFF0087FF),
-      onPrimary: Color(0xFF67AFFF),
+      surfaceTint: Color(0xFFF89B1D),
+      onPrimary: Color(0xFFF89B1D),
       onSecondary: Color(0xFFFC9926)
   ),
 

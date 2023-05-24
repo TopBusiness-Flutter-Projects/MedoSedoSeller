@@ -58,7 +58,7 @@ class Product {
   double unitPrice;
   double purchasePrice;
   double tax;
-  String taxModel;
+  String taxModel="0";
   int minQty;
   String taxType;
   double discount;
@@ -244,7 +244,7 @@ class Product {
     unitPrice = json['unit_price'].toDouble();
     purchasePrice = json['purchase_price'].toDouble();
     tax = json['tax'].toDouble();
-    taxModel = json['tax_model'];
+    taxModel = json['tax_model']??"0";
     taxType = json['tax_type'];
     discount = json['discount'].toDouble();
     discountType = json['discount_type'];

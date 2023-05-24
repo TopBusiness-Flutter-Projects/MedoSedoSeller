@@ -29,7 +29,7 @@ class MenuBottomSheet extends StatelessWidget {
   Widget build(BuildContext context) {
     List<CustomBottomSheet> _activateMenu = [
       CustomBottomSheet(image: '${Provider.of<SplashProvider>(context, listen: false).baseUrls.sellerImageUrl}/'
-          '${Provider.of<ProfileProvider>(context, listen: false).userInfoModel.image}',isProfile: true, title: getTranslated('profile', context),
+          '${Provider.of<ProfileProvider>(context, listen: false).userInfoModel!=null&&Provider.of<ProfileProvider>(context, listen: false).userInfoModel.image!=null?Provider.of<ProfileProvider>(context, listen: false).userInfoModel.image!=null:""}',isProfile: true, title: getTranslated('profile', context),
 
           onTap: ()=> Navigator.push(context, MaterialPageRoute(builder: (_) => ProfileScreenView()))),
 

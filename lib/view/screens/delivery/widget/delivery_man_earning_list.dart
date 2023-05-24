@@ -31,8 +31,8 @@ class _DeliveryManEarningListState extends State<DeliveryManEarningList> {
           String _totalWithDrawn = earningProvider.deliveryManEarning?.deliveryMan?.wallet?.totalWithdraw??'0';
           return Column(
             children: [
-              EarningItemCard(amount: earningProvider.deliveryManEarning?.totalEarn, title: 'total_earning',icon: Images.total_earning),
-              EarningItemCard(amount: earningProvider.deliveryManEarning?.withdrawableBalance, title: 'withdrawable_balance',icon: Images.withdrawable_balance_icon),
+              EarningItemCard(amount: earningProvider.deliveryManEarning?.totalEarn??0, title: 'total_earning',icon: Images.total_earning),
+              EarningItemCard(amount: earningProvider.deliveryManEarning?.withdrawableBalance??0, title: 'withdrawable_balance',icon: Images.withdrawable_balance_icon),
               EarningItemCard(amount: double.parse(_totalWithDrawn), title: 'already_withdrawn',icon: Images.already_withdrawn_icon),
 
 

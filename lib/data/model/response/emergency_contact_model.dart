@@ -22,8 +22,8 @@ class EmergencyContactModel {
 }
 
 class ContactList {
-  int id;
-  int userId;
+  dynamic id;
+  dynamic userId;
   String name;
   String phone;
   int status;

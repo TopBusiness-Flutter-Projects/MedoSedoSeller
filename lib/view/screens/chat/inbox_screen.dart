@@ -55,7 +55,9 @@ class _InboxScreenState extends State<InboxScreen> {
                   child: Center(child: SizedBox(width: 1170,
                       child:  Padding(
                         padding:  EdgeInsets.symmetric(horizontal: Dimensions.PADDING_SIZE_DEFAULT),
-                        child: PaginatedListView(
+                        child:
+        chatProvider.chatModel.chat.length>0?
+        PaginatedListView(
                           reverse: false,
                           scrollController: _scrollController,
                           onPaginate: (int offset) => chatProvider.getChatList(context,offset, reload: false),
@@ -71,10 +73,11 @@ class _InboxScreenState extends State<InboxScreen> {
                               return  ChatCardWidget(chat: chatProvider.chatModel.chat[index]);
                             },
                           ),
-                        ),
+                        ):
+                        NoDataScreen(),
                       ))))),
             ),
-          ) :const NoDataScreen(): CustomLoader(height: MediaQuery.of(context).size.height-500),
+          ) : CustomLoader(height: MediaQuery.of(context).size.height-500): CustomLoader(height: MediaQuery.of(context).size.height-500),
 
         ]);
       },

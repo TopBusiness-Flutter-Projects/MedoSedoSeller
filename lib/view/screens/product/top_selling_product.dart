@@ -65,7 +65,7 @@ class TopSellingProductScreen extends StatelessWidget {
                     crossAxisCount: 2,
                     mainAxisSpacing: 9,
                     crossAxisSpacing: 5,
-                    childAspectRatio: MediaQuery.of(context).size.width < 400? 1/1.23: MediaQuery.of(context).size.width < 415? 1/1.22 : 1/1.28,
+                    childAspectRatio: MediaQuery.of(context).size.width < 400? 1/1.28: MediaQuery.of(context).size.width < 415? 1/1.28 : 1/1.36,
                   ),
                   padding: EdgeInsets.zero,
                   shrinkWrap: true,

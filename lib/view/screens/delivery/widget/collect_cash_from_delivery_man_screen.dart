@@ -25,7 +25,7 @@ class _CollectedCashFromDeliveryManState extends State<CollectedCashFromDelivery
     return Consumer<DeliveryManProvider>(
         builder: (context, collectedCashProvider, child) {
           List<CollectedCash> collectedCashList;
-          collectedCashList = collectedCashProvider.collectedCashModel.collectedCash;
+          collectedCashList = collectedCashProvider.collectedCashModel!=null?collectedCashProvider.collectedCashModel.collectedCash??[]:[];
           return collectedCashList != null ? collectedCashProvider.earningList.length > 0 ?
           RefreshIndicator(
             backgroundColor: Theme.of(context).primaryColor,
