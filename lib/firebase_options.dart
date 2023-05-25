@@ -63,6 +63,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '713444287382',
     projectId: 'medosedo-857c6',
     storageBucket: 'medosedo-857c6.appspot.com',
+    androidClientId: '713444287382-3l1e2p2hag02nib3ifckc7c9u4u845pb.apps.googleusercontent.com',
     iosClientId: '713444287382-g96i584hta60n58425igr3nbltlc0582.apps.googleusercontent.com',
     iosBundleId: 'com.topbusiness.medosedovendor',
   );

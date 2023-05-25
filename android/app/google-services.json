@@ -7,12 +7,80 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:713444287382:android:d5608526cfeb871d8733b7",
+        "android_client_info": {
+          "package_name": "com.topbusiness.medosedoDelivery"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "713444287382-53squifv4t5497k58kh4gcsoe4c187jp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.topbusiness.medosedoDelivery",
+            "certificate_hash": "f05cda2f880f81250300ea3b0695dccd45c7ad9b"
+          }
+        },
+        {
+          "client_id": "713444287382-82edi7sq0fouiub2epsfmn64apggcj5d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.topbusiness.medosedoDelivery",
+            "certificate_hash": "d6d02a4d81b0997ef75b051aad62d658953ceb08"
+          }
+        },
+        {
+          "client_id": "713444287382-v0nit8sdp0mf7o18opp702ti9ca4a75m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHZVk7WOksVc_eHSuPvbpsmQRN7La1VMU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "713444287382-v0nit8sdp0mf7o18opp702ti9ca4a75m.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "713444287382-g96i584hta60n58425igr3nbltlc0582.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.topbusiness.medosedovendor"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:713444287382:android:9edaf5ba5cf3fca88733b7",
         "android_client_info": {
           "package_name": "com.topbusiness.medosedo_ecom"
         }
       },
       "oauth_client": [
+        {
+          "client_id": "713444287382-770uibocbd2s0k6c8sjbhuc084c55fbj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.topbusiness.medosedo_ecom",
+            "certificate_hash": "f05cda2f880f81250300ea3b0695dccd45c7ad9b"
+          }
+        },
+        {
+          "client_id": "713444287382-87a0a5u4h991gpg315svi48ev409caas.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.topbusiness.medosedo_ecom",
+            "certificate_hash": "e57593c0e0d2dc5d227798a2d710f3d94148426d"
+          }
+        },
         {
           "client_id": "713444287382-v0nit8sdp0mf7o18opp702ti9ca4a75m.apps.googleusercontent.com",
           "client_type": 3
@@ -49,6 +117,22 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "713444287382-3l1e2p2hag02nib3ifckc7c9u4u845pb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.topbusiness.medosedo_vendor_app",
+            "certificate_hash": "f05cda2f880f81250300ea3b0695dccd45c7ad9b"
+          }
+        },
+        {
+          "client_id": "713444287382-4o4udv3ee01s7oot45hch27e9a7gsotu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.topbusiness.medosedo_vendor_app",
+            "certificate_hash": "c9f3bec60af6778e0119f4dc363af36977f24d6c"
+          }
+        },
         {
           "client_id": "713444287382-v0nit8sdp0mf7o18opp702ti9ca4a75m.apps.googleusercontent.com",
           "client_type": 3
