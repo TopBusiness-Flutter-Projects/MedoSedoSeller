@@ -528,6 +528,7 @@
   "product_specification": "مواصفات المنتج",
   "current_stock": "المخزون الحالي",
   "description": "وصف",
+  "image_size": "حجم الصوره",
   "product_quantity_is_required": "كمية المنتج مطلوبة",
   "quantity_updated_successfully": "تم تحديث الكمية بنجاح",
   "customer_not_available": "الزبون غير متوفر",
