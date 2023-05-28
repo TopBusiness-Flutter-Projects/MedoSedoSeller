@@ -26,12 +26,18 @@
 	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>This app needs access to bluethooth to send and recive files.</string>
 	<key>NSCameraUsageDescription</key>
 	<string>This app need camera access for taking photo for user profile picture.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription </key>
+	<string>This app needs access to location to manage coverage of restaurant and also show the customer and restaurant distance.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>This app needs access to location to manage delivery address when add a new address.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>This app need photo gallery access for taking photo for user profile picture.</string>
+	<key>UIApplicationSupportsIndirectInputEvents</key>
+	<true/>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>fetch</string>
@@ -42,21 +48,19 @@
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UISupportedInterfaceOrientations</key>
-    	<array>
-    		<string>UIInterfaceOrientationPortrait</string>
-    		<string>UIInterfaceOrientationLandscapeLeft</string>
-    		<string>UIInterfaceOrientationLandscapeRight</string>
-    	</array>
-    	<key>UISupportedInterfaceOrientations~ipad</key>
-    	<array>
-    		<string>UIInterfaceOrientationPortrait</string>
-    		<string>UIInterfaceOrientationPortraitUpsideDown</string>
-    		<string>UIInterfaceOrientationLandscapeLeft</string>
-    		<string>UIInterfaceOrientationLandscapeRight</string>
-    	</array>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>UISupportedInterfaceOrientations~ipad</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-	<key>UIApplicationSupportsIndirectInputEvents</key>
-	<true/>
 </dict>
 </plist>
