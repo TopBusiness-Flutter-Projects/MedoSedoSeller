@@ -157,7 +157,7 @@ class AppConstants {
   static const String LANG_KEY = 'lang';
 
   static List<LanguageModel> languages = [
-    LanguageModel(imageUrl: Images.united_kindom, languageName: 'English', countryCode: 'US', languageCode: 'en'),
     LanguageModel(imageUrl: Images.arabic, languageName: 'Arabic', countryCode: 'SA', languageCode: 'ar'),
+    LanguageModel(imageUrl: Images.united_kindom, languageName: 'English', countryCode: 'US', languageCode: 'en'),
   ];
 }
