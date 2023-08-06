@@ -8,7 +8,7 @@ import 'package:medosedo_vendor/view/screens/shipping/category_wise_shipping.dar
 import 'package:medosedo_vendor/view/screens/shipping/widget/product_wise_shipping.dart';
 
 class ShippingMainPage extends StatelessWidget {
-  const ShippingMainPage({Key key}) : super(key: key);
+  const ShippingMainPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

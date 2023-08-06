@@ -9,7 +9,7 @@ import 'package:medosedo_vendor/view/screens/delivery/withdraw/withdraw_card.dar
 
 
 class WithdrawListView extends StatelessWidget {
-  const WithdrawListView({Key key}) : super(key: key);
+  const WithdrawListView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

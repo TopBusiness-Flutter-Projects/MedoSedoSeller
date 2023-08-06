@@ -51,11 +51,11 @@ class AuthScreen extends StatelessWidget{
 
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: Dimensions.PADDING_SIZE_DEFAULT),
-                  child: Text(getTranslated('login', context),
+                  child: Text(getTranslated('login', context)!,
                     style: titilliumBold.copyWith(fontSize: Dimensions.FONT_SIZE_OVER_LARGE))),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: Dimensions.PADDING_SIZE_DEFAULT,vertical: Dimensions.PADDING_SIZE_SMALL),
-                  child: Text(getTranslated('manage_your_business_from_app', context),
+                  child: Text(getTranslated('manage_your_business_from_app', context)!,
                     style: titilliumRegular.copyWith(fontSize: Dimensions.FONT_SIZE_DEFAULT, color: Theme.of(context).hintColor)),
                 ),
 

@@ -6,7 +6,7 @@ import 'package:medosedo_vendor/utill/dimensions.dart';
 import 'package:medosedo_vendor/view/base/custom_app_bar.dart';
 import 'package:medosedo_vendor/view/screens/home/widget/stock_out_product_widget.dart';
 class StockOutProductScreen extends StatelessWidget {
-  const StockOutProductScreen({Key key}) : super(key: key);
+  const StockOutProductScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

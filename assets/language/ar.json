@@ -695,8 +695,8 @@
   "please_select_vacation_date_range": "الرجاء تحديد نطاق تاريخ الإجازة",
   "vacation_date_range": "نطاق تاريخ الإجازة",
   "taxModel": "النموذج الضريبي",
-  "image_upload_failed": "Image upload failed",
-  "product_add_failed": "Product add failed"
+  "image_upload_failed": "فشل رفع الصوره ",
+  "product_add_failed": "فشل اضافة المنتج"
 }
 
 

@@ -8,12 +8,12 @@ import 'package:medosedo_vendor/data/model/response/year_model.dart';
 import 'package:medosedo_vendor/utill/app_constants.dart';
 
 class TransactionRepo {
-  final DioClient dioClient;
-  TransactionRepo({@required this.dioClient});
+  final DioClient? dioClient;
+  TransactionRepo({required this.dioClient});
 
   Future<ApiResponse> getTransactionList(String status, String from, String to) async {
     try {
-      final Response response = await dioClient.get('${AppConstants.TRANSACTIONS_URI}$status&from=$from&to=$to');
+      final Response response = await dioClient!.get('${AppConstants.TRANSACTIONS_URI}$status&from=$from&to=$to');
       return ApiResponse.withSuccess(response);
     } catch (e){
       return ApiResponse.withError(ApiErrorHandler.getMessage(e));

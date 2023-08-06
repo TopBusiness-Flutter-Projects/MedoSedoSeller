@@ -4,9 +4,9 @@ import 'package:medosedo_vendor/utill/dimensions.dart';
 import 'package:medosedo_vendor/view/base/custom_app_bar.dart';
 
 class HtmlViewScreen extends StatelessWidget {
-  final String title;
-  final String url;
-  HtmlViewScreen({@required this.url, @required this.title});
+  final String? title;
+  final String? url;
+  HtmlViewScreen({required this.url, required this.title});
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -3,10 +3,10 @@ import 'package:medosedo_vendor/utill/color_resources.dart';
 import 'package:medosedo_vendor/utill/dimensions.dart';
 import 'package:medosedo_vendor/utill/styles.dart';
 class WalletCard extends StatelessWidget {
-  final String amount;
-  final String title;
-  final Color color;
-  const WalletCard({Key key, this.amount, this.title, this.color}) : super(key: key);
+  final String? amount;
+  final String? title;
+  final Color? color;
+  const WalletCard({Key? key, this.amount, this.title, this.color}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class WalletCard extends StatelessWidget {
                       style: robotoBold.copyWith(color: ColorResources.getWhite(context),
                           fontSize: Dimensions.FONT_SIZE_WALLET)),
 
-                  Text(title,textAlign: TextAlign.center ,style: robotoRegular.copyWith(color: ColorResources.getWhite(context),
+                  Text(title!,textAlign: TextAlign.center ,style: robotoRegular.copyWith(color: ColorResources.getWhite(context),
                       fontSize: Dimensions.FONT_SIZE_LARGE)),
 
                 ],

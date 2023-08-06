@@ -6,10 +6,10 @@ import 'package:medosedo_vendor/utill/dimensions.dart';
 import 'package:medosedo_vendor/utill/styles.dart';
 
 class ProductCalculationItem extends StatelessWidget {
-  final String title;
-  final double price;
+  final String? title;
+  final double? price;
   final bool isQ;
-  const ProductCalculationItem({Key key, this.title, this.price, this.isQ = false}) : super(key: key);
+  const ProductCalculationItem({Key? key, this.title, this.price, this.isQ = false}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

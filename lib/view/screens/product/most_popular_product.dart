@@ -12,7 +12,7 @@ import 'package:medosedo_vendor/view/screens/product/widget/top_most_product_car
 
 class MostPopularProductScreen extends StatelessWidget {
   final bool isMain;
-  const MostPopularProductScreen({Key key, this.isMain = false}) : super(key: key);
+  const MostPopularProductScreen({Key? key, this.isMain = false}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

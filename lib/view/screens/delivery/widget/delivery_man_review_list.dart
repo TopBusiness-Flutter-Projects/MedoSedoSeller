@@ -7,8 +7,8 @@ import 'package:medosedo_vendor/view/base/no_data_screen.dart';
 import 'package:medosedo_vendor/view/screens/delivery/widget/delivery_man_review_card.dart';
 
 class DeliveryManReviewList extends StatelessWidget {
-  final DeliveryMan deliveryMan;
-  const DeliveryManReviewList({Key key, this.deliveryMan}) : super(key: key);
+  final DeliveryMan? deliveryMan;
+  const DeliveryManReviewList({Key? key, this.deliveryMan}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -7,7 +7,7 @@ import 'package:medosedo_vendor/view/screens/review/product_review_screen.dart';
 import 'package:medosedo_vendor/view/screens/shop/widget/shop_product_list.dart';
 
 class ShopPageView extends StatelessWidget {
-  const ShopPageView({Key key}) : super(key: key);
+  const ShopPageView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

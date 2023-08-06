@@ -10,7 +10,7 @@ import 'package:medosedo_vendor/view/screens/delivery/emergency_contact/widget/e
 
 
 class EmergencyContactListView extends StatelessWidget {
-  const EmergencyContactListView({Key key}) : super(key: key);
+  const EmergencyContactListView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

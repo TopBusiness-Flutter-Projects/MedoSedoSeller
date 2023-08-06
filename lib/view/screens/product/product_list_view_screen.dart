@@ -7,7 +7,7 @@ import 'package:medosedo_vendor/view/screens/product/top_selling_product.dart';
 class ProductListScreen extends StatelessWidget {
   final String title;
   final bool isPopular;
-  const ProductListScreen({Key key, @required this.title, this.isPopular = false}) : super(key: key);
+  const ProductListScreen({Key? key, required this.title, this.isPopular = false}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

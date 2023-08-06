@@ -6,7 +6,7 @@ import 'package:medosedo_vendor/view/base/custom_app_bar.dart';
 import 'package:medosedo_vendor/view/screens/top_delivery_man/top_delivery_man_view.dart';
 
 class TopDeliveryMAnScreen extends StatelessWidget {
-  const TopDeliveryMAnScreen({Key key}) : super(key: key);
+  const TopDeliveryMAnScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

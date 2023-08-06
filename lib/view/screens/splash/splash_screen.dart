@@ -13,9 +13,9 @@ import 'package:medosedo_vendor/view/screens/dashboard/dashboard_screen.dart';
 import 'package:medosedo_vendor/view/screens/splash/widget/splash_painter.dart';
 
 class SplashScreen extends StatefulWidget {
-  final int orderId;
+  final int? orderId;
 
-  const SplashScreen({Key key, this.orderId}) : super(key: key);
+  const SplashScreen({Key? key, this.orderId}) : super(key: key);
   @override
   _SplashScreenState createState() => _SplashScreenState();
 }

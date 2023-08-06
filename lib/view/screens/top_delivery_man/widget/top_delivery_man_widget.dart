@@ -12,12 +12,12 @@ import 'package:medosedo_vendor/view/base/custom_image.dart';
 import 'package:medosedo_vendor/view/screens/delivery/delivery_man_details.dart';
 
 class TopDeliveryManWidget extends StatelessWidget {
-  final DeliveryMan deliveryMan;
-  const TopDeliveryManWidget({Key key, this.deliveryMan}) : super(key: key);
+  final DeliveryMan? deliveryMan;
+  const TopDeliveryManWidget({Key? key, this.deliveryMan}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    String baseUrl = Provider.of<SplashProvider>(context, listen: false).baseUrls.deliveryManImageUrl;
+    String? baseUrl = Provider.of<SplashProvider>(context, listen: false).baseUrls!.deliveryManImageUrl;
     return GestureDetector(
       onTap: () => Navigator.push(context,
           MaterialPageRoute(builder: (_) => DeliveryManDetailsScreen(deliveryMan: deliveryMan))),
@@ -49,7 +49,7 @@ class TopDeliveryManWidget extends StatelessWidget {
                     height: Provider.of<LocalizationProvider>(context, listen: false).isLtr?  75: 72,
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(100),
-                      child: CustomImage(image: '$baseUrl/${deliveryMan.image}',
+                      child: CustomImage(image: '$baseUrl/${deliveryMan!.image}',
                         height: Dimensions.image_size,width: Dimensions.image_size,)
 
 
@@ -62,7 +62,7 @@ class TopDeliveryManWidget extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start, children: [
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 6),
-                      child: Text(deliveryMan.fName+' '+deliveryMan.lName ?? '',textAlign: TextAlign.center,
+                      child: Text(deliveryMan!.fName!+' '+deliveryMan!.lName! ?? '',textAlign: TextAlign.center,
                           style: robotoBold.copyWith(fontSize: 12),
                           ),
                     ),
@@ -84,7 +84,7 @@ class TopDeliveryManWidget extends StatelessWidget {
                   ),
                   child: Column(
                     children: [
-                      Text('${NumberFormat.compact().format(deliveryMan.orders.isNotEmpty?deliveryMan.orders[0].count : 0)}',
+                      Text('${NumberFormat.compact().format(deliveryMan!.orders!.isNotEmpty?deliveryMan!.orders![0].count : 0)}',
                         style: robotoMedium.copyWith(color: Colors.white),),
 
 
