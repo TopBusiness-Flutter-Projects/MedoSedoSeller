@@ -172,127 +172,127 @@ class _AddProductNextScreenState extends State<AddProductNextScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
 
-                    resProvider.productTypeIndex == 0?
-                   Container(child: Column(children: [
-                     Padding(
-                       padding: const EdgeInsets.only(top: Dimensions.PADDING_SIZE_DEFAULT),
-                       child: Row(mainAxisAlignment: MainAxisAlignment.center,
-                         children: [
-                           Text(getTranslated('variations', context)!,
-                               style: robotoBold.copyWith(color: ColorResources.getHeadTextColor(context),
-                                   fontSize: Dimensions.FONT_SIZE_EXTRA_LARGE)),
-                         ],
-                       ),
-                     ),
-                     SizedBox(height: Dimensions.PADDING_SIZE_SMALL),
-
-
-                     Row(children: [
-                       Text(getTranslated('add_color_variation', context)!,
-                           style: robotoRegular.copyWith(fontSize: Dimensions.FONT_SIZE_DEFAULT)),
-                       Spacer(),
-
-                       FlutterSwitch(width: 60.0, height: 30.0, toggleSize: 28.0,
-                         value: resProvider.attributeList![0].active,
-                         borderRadius: 20.0,
-                         activeColor: Theme.of(context).primaryColor,
-                         padding: 1.0,
-                         onToggle:(bool isActive) =>resProvider.toggleAttribute(context, 0, widget.product),
-                       ),
-                     ],),
-                     SizedBox(height: Dimensions.PADDING_SIZE_SMALL),
-
-                     resProvider.attributeList![0].active?
-                     Consumer<SplashProvider>(builder: (ctx, colorProvider, child){
-                       if (colorProvider.colorList != null) {
-                         for (int index = 0; index < colorProvider.colorList!.length; index++) {
-                           _colors.add(index);
-                         }
-                       }
-                       return Autocomplete<int>(
-                         optionsBuilder: (TextEditingValue value) {
-                           if (value.text.isEmpty) {
-                             return Iterable<int>.empty();
-                           } else {
-                             return _colors.where((color) => colorProvider.colorList![color].
-                             name!.toLowerCase().contains(value.text.toLowerCase()));
-                           }
-                         },
-                         fieldViewBuilder:
-                             (context, controller, node, onComplete) {
-                           return Container(
-                             height: 50,
-                             decoration: BoxDecoration(color: Theme.of(context).cardColor,
-                               border: Border.all(width: 1, color: Theme.of(context).hintColor.withOpacity(.50)),
-                               borderRadius: BorderRadius.circular(Dimensions.PADDING_SIZE_SMALL),
-                             ),
-                             child: TextField(
-                               controller: controller,
-                               focusNode: node, onEditingComplete: onComplete,
-                               decoration: InputDecoration(
-                                 hintText: getTranslated('type_color_name', context),
-                                 border: OutlineInputBorder(
-                                     borderRadius: BorderRadius.circular(
-                                         Dimensions.PADDING_SIZE_SMALL),
-                                     borderSide: BorderSide.none),
-                               ),
-                             ),
-                           );
-                         },
-                         displayStringForOption: (value) => colorProvider.colorList![value].name!,
-                         onSelected: (int value) {
-                           resProvider.addVariant(context, 0,colorProvider.colorList![value].name, widget.product, true);
-                           resProvider.addColorCode(colorProvider.colorList![value].code);
-                         },
-                       );
-                     }):SizedBox(),
-
-
-                     SizedBox(height: resProvider.selectedColor.length != null ? Dimensions.PADDING_SIZE_SMALL : 0),
-
-                     SizedBox(height: (resProvider.attributeList![0].variants.length != null &&
-                         resProvider.attributeList![0].variants.length > 0) ? 40 : 0,
-                       child: (resProvider.attributeList![0].variants.length != null &&
-                           resProvider.attributeList![0].variants.length > 0) ?
-
-                       ListView.builder(
-                         itemCount: resProvider.attributeList![0].variants.length,
-                         scrollDirection: Axis.horizontal,
-                         itemBuilder: (context, index) {
-                           return Padding(
-                             padding: const EdgeInsets.all(Dimensions.PADDING_SIZE_VERY_TINY),
-                             child: Container(
-                               padding: EdgeInsets.symmetric(horizontal : Dimensions.PADDING_SIZE_MEDIUM),
-                               margin: EdgeInsets.only(right: Dimensions.PADDING_SIZE_SMALL),
-                               decoration: BoxDecoration(color: Theme.of(context).primaryColor.withOpacity(.20),
-                                 borderRadius: BorderRadius.circular(Dimensions.PADDING_SIZE_DEFAULT),
-                               ),
-                               child: Row(children: [
-                                 Consumer<SplashProvider>(builder: (ctx, colorP,child){
-                                   return Text(resProvider.attributeList![0].variants[index]!,
-                                     style: robotoRegular.copyWith(color: ColorResources.titleColor(context)),);
-                                 }),
-                                 SizedBox(width: Dimensions.PADDING_SIZE_SMALL),
-                                 InkWell(
-                                   onTap: (){resProvider.removeVariant(context, 0, index, widget.product);
-                                   resProvider.removeColorCode(index);},
-                                   child: Icon(Icons.close, size: 15, color: ColorResources.titleColor(context)),
-                                 ),
-                               ]),
-                             ),
-                           );
-                         },
-                       ):SizedBox(),
-                     ),
-
-
-
-                     /*------------------Attribute View-------------------*/
-
-                     SizedBox(height: Dimensions.PADDING_SIZE_SMALL),
-
-                     AttributeView(product: widget.product, colorOn: resProvider.attributeList![0].active),
-                   ],)):SizedBox(),
+                    // resProvider.productTypeIndex == 0?
+                   // Container(child: Column(children: [
+                   //   // Padding(
+                   //   //   padding: const EdgeInsets.only(top: Dimensions.PADDING_SIZE_DEFAULT),
+                   //   //   child: Row(mainAxisAlignment: MainAxisAlignment.center,
+                   //   //     children: [
+                   //   //       Text(getTranslated('variations', context)!,
+                   //   //           style: robotoBold.copyWith(color: ColorResources.getHeadTextColor(context),
+                   //   //               fontSize: Dimensions.FONT_SIZE_EXTRA_LARGE)),
+                   //   //     ],
+                   //   //   ),
+                   //   // ),
+                   //   SizedBox(height: Dimensions.PADDING_SIZE_SMALL),
+                   //
+                   //
+                   //   // Row(children: [
+                   //   //   Text(getTranslated('add_color_variation', context)!,
+                   //   //       style: robotoRegular.copyWith(fontSize: Dimensions.FONT_SIZE_DEFAULT)),
+                   //   //   Spacer(),
+                   //   //
+                   //   //   FlutterSwitch(width: 60.0, height: 30.0, toggleSize: 28.0,
+                   //   //     value: resProvider.attributeList![0].active,
+                   //   //     borderRadius: 20.0,
+                   //   //     activeColor: Theme.of(context).primaryColor,
+                   //   //     padding: 1.0,
+                   //   //     onToggle:(bool isActive) =>resProvider.toggleAttribute(context, 0, widget.product),
+                   //   //   ),
+                   //   // ],),
+                   //   // SizedBox(height: Dimensions.PADDING_SIZE_SMALL),
+                   //   //
+                   //   // resProvider.attributeList![0].active?
+                   //   // Consumer<SplashProvider>(builder: (ctx, colorProvider, child){
+                   //   //   if (colorProvider.colorList != null) {
+                   //   //     for (int index = 0; index < colorProvider.colorList!.length; index++) {
+                   //   //       _colors.add(index);
+                   //   //     }
+                   //   //   }
+                   //   //   return Autocomplete<int>(
+                   //   //     optionsBuilder: (TextEditingValue value) {
+                   //   //       if (value.text.isEmpty) {
+                   //   //         return Iterable<int>.empty();
+                   //   //       } else {
+                   //   //         return _colors.where((color) => colorProvider.colorList![color].
+                   //   //         name!.toLowerCase().contains(value.text.toLowerCase()));
+                   //   //       }
+                   //   //     },
+                   //   //     fieldViewBuilder:
+                   //   //         (context, controller, node, onComplete) {
+                   //   //       return Container(
+                   //   //         height: 50,
+                   //   //         decoration: BoxDecoration(color: Theme.of(context).cardColor,
+                   //   //           border: Border.all(width: 1, color: Theme.of(context).hintColor.withOpacity(.50)),
+                   //   //           borderRadius: BorderRadius.circular(Dimensions.PADDING_SIZE_SMALL),
+                   //   //         ),
+                   //   //         child: TextField(
+                   //   //           controller: controller,
+                   //   //           focusNode: node, onEditingComplete: onComplete,
+                   //   //           decoration: InputDecoration(
+                   //   //             hintText: getTranslated('type_color_name', context),
+                   //   //             border: OutlineInputBorder(
+                   //   //                 borderRadius: BorderRadius.circular(
+                   //   //                     Dimensions.PADDING_SIZE_SMALL),
+                   //   //                 borderSide: BorderSide.none),
+                   //   //           ),
+                   //   //         ),
+                   //   //       );
+                   //   //     },
+                   //   //     displayStringForOption: (value) => colorProvider.colorList![value].name!,
+                   //   //     onSelected: (int value) {
+                   //   //       resProvider.addVariant(context, 0,colorProvider.colorList![value].name, widget.product, true);
+                   //   //       resProvider.addColorCode(colorProvider.colorList![value].code);
+                   //   //     },
+                   //   //   );
+                   //   // }):SizedBox(),
+                   //
+                   //
+                   //   // SizedBox(height: resProvider.selectedColor.length != null ? Dimensions.PADDING_SIZE_SMALL : 0),
+                   //   //
+                   //   // SizedBox(height: (resProvider.attributeList![0].variants.length != null &&
+                   //   //     resProvider.attributeList![0].variants.length > 0) ? 40 : 0,
+                   //   //   child: (resProvider.attributeList![0].variants.length != null &&
+                   //   //       resProvider.attributeList![0].variants.length > 0) ?
+                   //   //
+                   //   //   ListView.builder(
+                   //   //     itemCount: resProvider.attributeList![0].variants.length,
+                   //   //     scrollDirection: Axis.horizontal,
+                   //   //     itemBuilder: (context, index) {
+                   //   //       return Padding(
+                   //   //         padding: const EdgeInsets.all(Dimensions.PADDING_SIZE_VERY_TINY),
+                   //   //         child: Container(
+                   //   //           padding: EdgeInsets.symmetric(horizontal : Dimensions.PADDING_SIZE_MEDIUM),
+                   //   //           margin: EdgeInsets.only(right: Dimensions.PADDING_SIZE_SMALL),
+                   //   //           decoration: BoxDecoration(color: Theme.of(context).primaryColor.withOpacity(.20),
+                   //   //             borderRadius: BorderRadius.circular(Dimensions.PADDING_SIZE_DEFAULT),
+                   //   //           ),
+                   //   //           child: Row(children: [
+                   //   //             Consumer<SplashProvider>(builder: (ctx, colorP,child){
+                   //   //               return Text(resProvider.attributeList![0].variants[index]!,
+                   //   //                 style: robotoRegular.copyWith(color: ColorResources.titleColor(context)),);
+                   //   //             }),
+                   //   //             SizedBox(width: Dimensions.PADDING_SIZE_SMALL),
+                   //   //             InkWell(
+                   //   //               onTap: (){resProvider.removeVariant(context, 0, index, widget.product);
+                   //   //               resProvider.removeColorCode(index);},
+                   //   //               child: Icon(Icons.close, size: 15, color: ColorResources.titleColor(context)),
+                   //   //             ),
+                   //   //           ]),
+                   //   //         ),
+                   //   //       );
+                   //   //     },
+                   //   //   ):SizedBox(),
+                   //   // ),
+                   //   //
+                   //   //
+                   //   //
+                   //   // /*------------------Attribute View-------------------*/
+                   //   //
+                   //   // SizedBox(height: Dimensions.PADDING_SIZE_SMALL),
+                   //
+                   //   AttributeView(product: widget.product, colorOn: resProvider.attributeList![0].active),
+                   // ],)):SizedBox(),
 
 
 

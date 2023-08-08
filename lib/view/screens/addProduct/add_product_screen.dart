@@ -146,13 +146,13 @@ class _AddProductScreenState extends State<AddProductScreen> with TickerProvider
                           Text('*',style: robotoBold.copyWith(color: ColorResources.mainCardFourColor(context),
                               fontSize: Dimensions.FONT_SIZE_DEFAULT),),
                           Spacer(),
-                          InkWell(
-                            onTap: (){
-                              var rng = new Random();
-                              var code = rng.nextInt(900000) + 100000;
-                              resProvider.productCode.text = code.toString();
-                            },
-                              child: Text(getTranslated('generate_code', context)!, style: robotoRegular.copyWith(fontSize: Dimensions.FONT_SIZE_DEFAULT, color: ColorResources.mainCardFourColor(context)))),
+                          // InkWell(
+                          //   onTap: (){
+                          //     var rng = new Random();
+                          //     var code = rng.nextInt(900000) + 100000;
+                          //     resProvider.productCode.text = code.toString();
+                          //   },
+                          //     child: Text(getTranslated('generate_code', context)!, style: robotoRegular.copyWith(fontSize: Dimensions.FONT_SIZE_DEFAULT, color: ColorResources.mainCardFourColor(context)))),
                         ],
                       ),
                       SizedBox(height: Dimensions.PADDING_SIZE_SMALL),
