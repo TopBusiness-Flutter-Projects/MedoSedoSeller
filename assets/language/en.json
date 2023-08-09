@@ -702,5 +702,6 @@
   "include": "Include",
   "exclude": "Exclude",
   "image_upload_failed": "Image upload failed",
-  "product_add_failed": "Product add failed"
+  "product_add_failed": "Product add failed",
+  "Continue": "Continue"
 }

@@ -282,7 +282,7 @@ class AuthProvider with ChangeNotifier {
 
   }
 
-  String? _countryDialCode = '+880';
+  String? _countryDialCode = '+20';
   String? get countryDialCode => _countryDialCode;
 
   void setCountryDialCode (String? setValue){

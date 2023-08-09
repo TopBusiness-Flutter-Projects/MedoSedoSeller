@@ -27,7 +27,7 @@ class InfoFieldVIew extends StatefulWidget {
 }
 
 class _InfoFieldVIewState extends State<InfoFieldVIew> {
-  String? _countryDialCode = "+880";
+  String? _countryDialCode = "+20";
   String currency = '',  country = '', selectedTimeZone = '';
   @override
   void initState() {

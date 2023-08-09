@@ -39,7 +39,7 @@ class _AddNewCustomerScreenState extends State<AddNewCustomerScreen> {
   FocusNode _cityNode = FocusNode();
   FocusNode _zipCodeNode = FocusNode();
   FocusNode _addressNode = FocusNode();
-  String? _countryDialCode = "+880";
+  String? _countryDialCode = "+20";
   @override
   void initState() {
     // TODO: implement initState

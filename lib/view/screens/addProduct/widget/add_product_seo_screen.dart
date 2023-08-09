@@ -691,7 +691,7 @@ class _AddProductSeoScreenState extends State<AddProductSeoScreen> {
 
                 print('-------${textEditingController.text}');
               }
-
+              resProvider.descriptionControllerList.elementAt(1).text= resProvider.descriptionControllerList.elementAt(0).text;
               resProvider.descriptionControllerList.forEach((description) {
                 descriptionList.add(description.text.trim());});
 
