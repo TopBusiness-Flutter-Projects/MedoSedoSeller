@@ -186,7 +186,8 @@ class _ProductDetailsWidgetState extends State<ProductDetailsWidget> {
 
                           Padding(
                             padding: const EdgeInsets.fromLTRB(Dimensions.PADDING_SIZE_SMALL, 0, Dimensions.PADDING_SIZE_DEFAULT, Dimensions.PADDING_SIZE_SMALL),
-                            child: Html(data: widget.productModel!.details,
+                            child: Html(
+                              data: widget.productModel!.details??'',
                           //    : Html.tags,
                           //     customRenders: {
                           //       tableMatcher(): tableRender(),
@@ -199,11 +200,11 @@ class _ProductDetailsWidgetState extends State<ProductDetailsWidget> {
                                   border: Border(bottom: BorderSide(color: Colors.grey)),
                                 ),
                                 "th": Style(
-                                  padding: EdgeInsets.all(6) as HtmlPaddings,
+                                  padding: HtmlPaddings.all(6) ,
                                   backgroundColor: Colors.grey,
                                 ),
                                 "td": Style(
-                                  padding: EdgeInsets.all(6) as HtmlPaddings,
+                                  padding: HtmlPaddings.all(6) ,
                                   alignment: Alignment.topLeft,
                                 ),
 

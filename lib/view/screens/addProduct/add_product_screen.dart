@@ -361,9 +361,11 @@ class _AddProductScreenState extends State<AddProductScreen> with TickerProvider
   List<Widget> _generateTabChildren() {
     List<Widget> _tabs = [];
     for(int index=0; index < Provider.of<SplashProvider>(context, listen: false).configModel!.languageList!.length; index++) {
-      _tabs.add(Text(Provider.of<SplashProvider>(context, listen: false).configModel!.languageList![index].name!.capitalize(),
-          style: robotoBold.copyWith()));
-    }
+      if(Provider.of<SplashProvider>(context, listen: false).configModel!.languageList![index].name!.capitalize()=="العربية"){
+        _tabs.add(Text(Provider.of<SplashProvider>(context, listen: false).configModel!.languageList![index].name!.capitalize(),
+            style: robotoBold.copyWith()));
+      }
+  }
     return _tabs;
   }
 

@@ -682,10 +682,16 @@ class _AddProductSeoScreenState extends State<AddProductSeoScreen> {
 
               List<String> titleList = [];
               List<String> descriptionList = [];
+              print("d;d;d;ldldl");
+              print(resProvider.titleControllerList.length);
+              resProvider.titleControllerList.elementAt(1).text= resProvider.titleControllerList.elementAt(0).text;
               for(TextEditingController textEditingController in resProvider.titleControllerList) {
+
                 titleList.add(textEditingController.text.trim());
+
                 print('-------${textEditingController.text}');
               }
+
               resProvider.descriptionControllerList.forEach((description) {
                 descriptionList.add(description.text.trim());});
 
