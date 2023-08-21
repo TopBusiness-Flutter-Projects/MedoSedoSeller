@@ -37,15 +37,15 @@ class _InboxScreenState extends State<InboxScreen> {
       backgroundColor: ColorResources.getIconBg(context),
       appBar: CustomAppBar(title: getTranslated('inbox', context)),
       body: Consumer<ChatProvider>(builder: (context, chatProvider, child) {
-        List<Chat>? _chatList;
-         _chatList = chatProvider.chatModel?.chat;
+        List<Chat> _chatList=[];
+         _chatList = chatProvider.chatModel!.chat??[];
         return Column(children: [
 
           Container(
               padding: const EdgeInsets.symmetric(vertical:Dimensions.PADDING_SIZE_EXTRA_SMALL),
               child:  const ChatHeader()),
 
-          _chatList != null? _chatList.isNotEmpty?
+              chatProvider.chatModel!=null?
           Expanded(
             child:  RefreshIndicator(
               onRefresh: () async {
@@ -56,7 +56,8 @@ class _InboxScreenState extends State<InboxScreen> {
                       child:  Padding(
                         padding:  EdgeInsets.symmetric(horizontal: Dimensions.PADDING_SIZE_DEFAULT),
                         child:
-        chatProvider.chatModel!.chat!.length>0?
+                        chatProvider.chatModel!.chat!.isNotEmpty?
+
         PaginatedListView(
                           reverse: false,
                           scrollController: _scrollController,
@@ -77,7 +78,9 @@ class _InboxScreenState extends State<InboxScreen> {
                         NoDataScreen(),
                       ))))),
             ),
-          ) : CustomLoader(height: MediaQuery.of(context).size.height-500): CustomLoader(height: MediaQuery.of(context).size.height-500),
+          ) :
+         CustomLoader(height: MediaQuery.of(context).size.height-500)
+            ,
 
         ]);
       },

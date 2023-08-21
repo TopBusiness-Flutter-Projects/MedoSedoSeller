@@ -2,7 +2,7 @@ class ChatModel {
   int? totalSize;
   String? limit;
   String? offset;
-  List<Chat>? chat;
+  List<Chat>? chat=[];
 
   ChatModel({this.totalSize, this.limit, this.offset, this.chat});
 
@@ -15,7 +15,10 @@ class ChatModel {
       json['chat'].forEach((v) {
         chat!.add(new Chat.fromJson(v));
       });
+    }else{
+      chat=[];
     }
+
   }
 
   Map<String, dynamic> toJson() {
@@ -25,6 +28,9 @@ class ChatModel {
     data['offset'] = this.offset;
     if (this.chat != null) {
       data['chat'] = this.chat!.map((v) => v.toJson()).toList();
+    }
+    else{
+      data['chat']=[];
     }
     return data;
   }

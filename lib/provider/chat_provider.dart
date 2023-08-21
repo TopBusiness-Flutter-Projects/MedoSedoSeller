@@ -23,7 +23,7 @@ class ChatProvider extends ChangeNotifier {
   bool _isLoading = false;
   bool get isLoading => _isLoading;
   ChatModel? _chatModel;
-  ChatModel? get chatModel => _chatModel;
+  ChatModel? get chatModel => _chatModel??ChatModel(chat: []);
 
 
   Future<void> getChatList(BuildContext context, int offset, {bool reload = false}) async {
