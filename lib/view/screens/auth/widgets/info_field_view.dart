@@ -132,7 +132,7 @@ class _InfoFieldVIewState extends State<InfoFieldVIew> {
                       hintText: getTranslated('email_address', context),
                       focusNode: authProvider.emailNode,
                       nextNode: authProvider.phoneNode,
-                      textInputType: TextInputType.name,
+                      textInputType: TextInputType.emailAddress,
                       controller: authProvider.emailController,
                       textInputAction: TextInputAction.next,
                     )),
