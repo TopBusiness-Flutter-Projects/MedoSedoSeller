@@ -10,13 +10,13 @@ class BusinessAnalyticsFilterData {
 
   BusinessAnalyticsFilterData(
       {this.pending,
-        this.confirmed,
-        this.processing,
-        this.outForDelivery,
-        this.delivered,
-        this.canceled,
-        this.returned,
-        this.failed});
+      this.confirmed,
+      this.processing,
+      this.outForDelivery,
+      this.delivered,
+      this.canceled,
+      this.returned,
+      this.failed});
 
   BusinessAnalyticsFilterData.fromJson(Map<String, dynamic> json) {
     pending = json['pending'];
