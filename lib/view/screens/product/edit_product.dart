@@ -74,12 +74,10 @@ class _EditProductScreenState extends State<EditProductScreen> {
                     Container(
                       child: InkWell(
                         onTap: () {
-                          if (widget.mainOrder.purchasePrice != null &&
-                              widget.mainOrder.purchasePrice! >= 0) {
-                            widget.mainOrder.purchasePrice =
-                                widget.mainOrder.purchasePrice! + 1;
+                          if (widget.unitPrice >= 0) {
+                            widget.unitPrice = widget.unitPrice + 1;
                           } else {
-                            widget.mainOrder.purchasePrice = 0;
+                            widget.unitPrice = 0;
                           }
                           setState(() {});
                         },
@@ -98,19 +96,17 @@ class _EditProductScreenState extends State<EditProductScreen> {
                               Theme.of(context).primaryColor.withOpacity(.06)),
                     ),
                     Spacer(),
-                    Text("${widget.mainOrder.purchasePrice.toString()} ج.م",
+                    Text("${widget.unitPrice.toString()} ج.م",
                         style: titilliumRegular.copyWith(
                             color: ColorResources.getTextColor(context))),
                     Spacer(),
                     Container(
                       child: InkWell(
                         onTap: () {
-                          if (widget.mainOrder.purchasePrice != null &&
-                              widget.mainOrder.purchasePrice! > 0) {
-                            widget.mainOrder.purchasePrice =
-                                widget.mainOrder.purchasePrice! - 1;
+                          if (widget.unitPrice > 0) {
+                            widget.unitPrice = widget.unitPrice - 1;
                           } else {
-                            widget.mainOrder.purchasePrice = 0;
+                            widget.unitPrice = 0;
                           }
                           setState(() {});
                         },
@@ -133,156 +129,14 @@ class _EditProductScreenState extends State<EditProductScreen> {
               SizedBox(height: Dimensions.PADDING_SIZE_LARGE),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 50),
-                child: Text('المتاح فى المخزن',
-                    style: titilliumRegular.copyWith(
-                        color: ColorResources.getTextColor(context))),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 45),
-                child: Row(
-                  children: [
-                    InkWell(
-                      onTap: () {
-                        if (widget.mainOrder.currentStock != null &&
-                            widget.mainOrder.currentStock! >= 0) {
-                          widget.mainOrder.currentStock =
-                              widget.mainOrder.currentStock! + 1;
-                        } else {
-                          widget.mainOrder.currentStock = 0;
-                        }
-                        setState(() {});
-                      },
-                      child: Container(
-                        child: Center(
-                            child: Icon(
-                          Icons.add,
-                          color: Theme.of(context).primaryColor,
-                        )),
-                        width: 50,
-                        height: 50,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.all(
-                                Radius.circular(Dimensions.PADDING_SIZE_LARGE)),
-                            color: Theme.of(context)
-                                .primaryColor
-                                .withOpacity(.06)),
-                      ),
-                    ),
-                    Spacer(),
-                    Text(widget.mainOrder.currentStock.toString(),
-                        style: titilliumRegular.copyWith(
-                            color: ColorResources.getTextColor(context))),
-                    Spacer(),
-                    InkWell(
-                      onTap: () {
-                        if (widget.mainOrder.currentStock != null &&
-                            widget.mainOrder.currentStock! > 0) {
-                          widget.mainOrder.currentStock =
-                              widget.mainOrder.currentStock! - 1;
-                        } else {
-                          widget.mainOrder.currentStock = 0;
-                        }
-                        setState(() {});
-                      },
-                      child: Container(
-                        child: Center(
-                            child: Icon(
-                          Icons.remove,
-                          color: Colors.red,
-                        )),
-                        width: 50,
-                        height: 50,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.all(
-                                Radius.circular(Dimensions.PADDING_SIZE_LARGE)),
-                            color: Colors.red.withOpacity(.06)),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(height: Dimensions.PADDING_SIZE_LARGE),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 50),
-                child: Text("الحد الاقصى",
-                    style: titilliumRegular.copyWith(
-                        color: ColorResources.getTextColor(context))),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 45),
-                child: Row(
-                  children: [
-                    InkWell(
-                      onTap: () {
-                        if (widget.mainOrder.minQty != null &&
-                            widget.mainOrder.minQty! > 0) {
-                          widget.mainOrder.minQty =
-                              widget.mainOrder.minQty! + 1;
-                        } else {
-                          widget.mainOrder.minQty = 0;
-                        }
-                        setState(() {});
-                      },
-                      child: Container(
-                        child: Center(
-                            child: Icon(
-                          Icons.add,
-                          color: Theme.of(context).primaryColor,
-                        )),
-                        width: 50,
-                        height: 50,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.all(
-                                Radius.circular(Dimensions.PADDING_SIZE_LARGE)),
-                            color: Theme.of(context)
-                                .primaryColor
-                                .withOpacity(.06)),
-                      ),
-                    ),
-                    Spacer(),
-                    Text(widget.mainOrder.minQty.toString(),
-                        style: titilliumRegular.copyWith(
-                            color: ColorResources.getTextColor(context))),
-                    Spacer(),
-                    InkWell(
-                      onTap: () {
-                        if (widget.mainOrder.minQty != null &&
-                            widget.mainOrder.minQty! > 0) {
-                          widget.mainOrder.minQty =
-                              widget.mainOrder.minQty! - 1;
-                        } else {
-                          widget.mainOrder.minQty = 0;
-                        }
-                        setState(() {});
-                      },
-                      child: Container(
-                        child: Center(
-                            child: Icon(
-                          Icons.remove,
-                          color: Colors.red,
-                        )),
-                        width: 50,
-                        height: 50,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.all(
-                                Radius.circular(Dimensions.PADDING_SIZE_LARGE)),
-                            color: Colors.red.withOpacity(.06)),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(height: Dimensions.PADDING_SIZE_LARGE),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 50),
                 child: CustomButton(
                   btnTxt: 'حفظ التعديلات',
                   onTap: () {
-                    // order.updateproductDetails(context,
-                    //     id: widget.mainOrder.id!,
-                    //     price: widget.mainOrder.purchasePrice ?? 0,
-                    //     stock: widget.mainOrder.currentStock ?? 0,
-                    //     minQty: widget.mainOrder.minQty ?? 0);
+                    order.updateProductUnitPrice(
+                      context: context,
+                      productId: widget.id,
+                      unitPrice: widget.unitPrice
+                    );
                     Navigator.pop(context);
                   },
                 ),
