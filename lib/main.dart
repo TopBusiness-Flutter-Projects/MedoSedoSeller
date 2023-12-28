@@ -37,6 +37,7 @@ import 'package:medosedo_vendor/view/screens/splash/splash_screen.dart';
 import 'di_container.dart' as di;
 import 'firebase_options.dart';
 import 'notification/my_notification.dart';
+//test github
 
 final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
     FlutterLocalNotificationsPlugin();
