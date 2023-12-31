@@ -314,7 +314,7 @@ packages:
     source: hosted
     version: "1.24.0"
   firebase_core_platform_interface:
-    dependency: "direct main"
+    dependency: "direct overridden"
     description:
       name: firebase_core_platform_interface
       sha256: b51257a8b4388565cd66062d727d3e60067b5f5cc3390eb0ecd20b8f97741bdb
@@ -830,12 +830,13 @@ packages:
     source: hosted
     version: "1.0.4"
   modal_bottom_sheet:
-    dependency: transitive
+    dependency: "direct main"
     description:
-      name: modal_bottom_sheet
-      sha256: ef533916a2c3089571c32bd34e410faca77a6849a3f28f748e0794525c5658a0
-      url: "https://pub.dev"
-    source: hosted
+      path: modal_bottom_sheet
+      ref: HEAD
+      resolved-ref: d79185a564c6d1b1535568ea7dfef060e20a049d
+      url: "https://github.com/danReynolds/modal_bottom_sheet.git"
+    source: git
     version: "2.1.2"
   nested:
     dependency: transitive

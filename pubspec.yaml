@@ -55,13 +55,14 @@ dependencies:
   syncfusion_flutter_datepicker: ^20.3.47
   textfield_tags: ^2.0.2
   flutter_launcher_icons: ^0.9.0
+  modal_bottom_sheet: ^2.1.2
 
 
-# dependency_overrides:
-#   modal_bottom_sheet:
-#     git:
-#       url: https://github.com/danReynolds/modal_bottom_sheet.git
-#       path: modal_bottom_sheet
+dependency_overrides:
+  modal_bottom_sheet:
+    git:
+      url: https://github.com/danReynolds/modal_bottom_sheet.git
+      path: modal_bottom_sheet
 
 
   firebase_core_platform_interface: 4.5.1
