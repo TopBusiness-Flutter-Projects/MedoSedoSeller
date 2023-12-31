@@ -19,15 +19,12 @@ class ChatScreen extends StatefulWidget {
 }
 
 class _ChatScreenState extends State<ChatScreen> {
-
   final ImagePicker picker = ImagePicker();
-
-
-
 
   @override
   void initState() {
-    Provider.of<ChatProvider>(context, listen: false).getMessageList(context, widget.userId, 1);
+    Provider.of<ChatProvider>(context, listen: false)
+        .getMessageList(context, widget.userId, 1);
     super.initState();
   }
 
@@ -37,21 +34,25 @@ class _ChatScreenState extends State<ChatScreen> {
       backgroundColor: ColorResources.getIconBg(context),
       body: Consumer<ChatProvider>(builder: (context, chat, child) {
         return Column(children: [
-
           CustomAppBar(title: widget.name),
 
           // Chats
-          Expanded(child: chat.messageList != null ? chat.messageList!.length != 0 ?
-          ListView.builder(
-            physics: BouncingScrollPhysics(),
-            padding: EdgeInsets.all(Dimensions.PADDING_SIZE_SMALL),
-            itemCount: chat.messageList!.length,
-            reverse: true,
-            itemBuilder: (context, index) {
-
-              return MessageBubble(message: chat.messageList![index]);
-            },
-          ) : SizedBox.shrink() : ChatShimmer()),
+          Expanded(
+              child: chat.messageList != null
+                  ? chat.messageList!.length != 0
+                      ? ListView.builder(
+                          physics: BouncingScrollPhysics(),
+                          padding:
+                              EdgeInsets.all(Dimensions.PADDING_SIZE_SMALL),
+                          itemCount: chat.messageList!.length,
+                          reverse: true,
+                          itemBuilder: (context, index) {
+                            return MessageBubble(
+                                message: chat.messageList![index]);
+                          },
+                        )
+                      : SizedBox.shrink()
+                  : ChatShimmer()),
 
           SendMessageWidget(id: widget.userId)
         ]);
@@ -59,6 +60,3 @@ class _ChatScreenState extends State<ChatScreen> {
     );
   }
 }
-
-
-
