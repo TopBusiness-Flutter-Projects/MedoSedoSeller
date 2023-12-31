@@ -384,11 +384,16 @@ class ProductProvider extends ChangeNotifier {
         await productRepo!.updateProductUnitPrice(productId, unitPrice!);
     if (apiResponse.response != null &&
         apiResponse.response!.statusCode == 200) {
-      int? userId =
-          Provider.of<ProfileProvider>(context!, listen: false).userId;
-      Provider.of<ProductProvider>(context, listen: false)
-          .initSellerProductList(userId.toString(), 1, context, 'en', '',
-              reload: true);
+      // int? userId =
+      //     Provider.of<ProfileProvider>(context!, listen: false).userId;
+      // Provider.of<ProductProvider>(context, listen: false)
+      //     .initSellerProductList(
+      //   userId.toString(),
+      //   1,
+      //   context,
+      //   'en',
+      //   '',
+      // );
     }
   }
 

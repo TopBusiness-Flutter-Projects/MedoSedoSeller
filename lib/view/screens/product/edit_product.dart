@@ -6,6 +6,7 @@ import '../../../../utill/dimensions.dart';
 import '../../../../utill/styles.dart';
 import '../../../localization/language_constrants.dart';
 import '../../../provider/product_provider.dart';
+import '../../../provider/profile_provider.dart';
 import '../../base/custom_button.dart';
 
 class EditProductScreen extends StatefulWidget {
@@ -132,12 +133,25 @@ class _EditProductScreenState extends State<EditProductScreen> {
                 child: CustomButton(
                   btnTxt: 'حفظ التعديلات',
                   onTap: () {
-                    order.updateProductUnitPrice(
-                      context: context,
-                      productId: widget.id,
-                      unitPrice: widget.unitPrice
-                    );
-                    Navigator.pop(context);
+                    order
+                        .updateProductUnitPrice(
+                            context: context,
+                            productId: widget.id,
+                            unitPrice: widget.unitPrice)
+                        .then((value) {
+                      int? userId =
+                          Provider.of<ProfileProvider>(context!, listen: false)
+                              .userId;
+                      Provider.of<ProductProvider>(context, listen: false)
+                          .initSellerProductList(
+                        userId.toString(),
+                        1,
+                        context,
+                        'en',
+                        '',
+                      );
+                      Navigator.pop(context);
+                    });
                   },
                 ),
               ),

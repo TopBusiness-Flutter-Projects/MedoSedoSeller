@@ -1,7 +1,5 @@
 import 'dart:convert';
-
 import 'package:dio/dio.dart';
-import 'package:flutter/material.dart';
 import 'package:medosedo_vendor/data/datasource/remote/dio/dio_client.dart';
 import 'package:medosedo_vendor/data/datasource/remote/exception/api_error_handler.dart';
 import 'package:medosedo_vendor/data/model/response/base/api_response.dart';
@@ -154,7 +152,7 @@ class ProductRepo {
       int? productId, double unitPrice) async {
     try {
       final response = await dioClient!.put(
-        '${AppConstants.UPDATE_PRODUCT_Price}/$productId',
+        '${AppConstants.UPDATE_PRODUCT_Price}$productId',
         data: {"unit_price": unitPrice},
       );
       return ApiResponse.withSuccess(response);
