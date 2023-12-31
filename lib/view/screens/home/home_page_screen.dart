@@ -63,7 +63,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
 
     super.initState();
   }
-
+// ahmed elsapagh
   @override
   Widget build(BuildContext context) {
     double limitedStockCardHeight = MediaQuery.of(context).size.width / 1.4;
