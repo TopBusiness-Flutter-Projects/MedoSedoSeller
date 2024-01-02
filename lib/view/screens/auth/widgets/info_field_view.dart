@@ -142,21 +142,21 @@ class _InfoFieldVIewState extends State<InfoFieldVIew> {
                         controller: authProvider.lastNameController,
                         textInputAction: TextInputAction.next,
                       )),
-                  SizedBox(height: Dimensions.PADDING_SIZE_SMALL),
-                  Container(
-                      margin: EdgeInsets.only(
-                          left: Dimensions.PADDING_SIZE_LARGE,
-                          right: Dimensions.PADDING_SIZE_LARGE,
-                          bottom: Dimensions.PADDING_SIZE_SMALL),
-                      child: CustomTextField(
-                        border: true,
-                        hintText: getTranslated('email_address', context),
-                        focusNode: authProvider.emailNode,
-                        nextNode: authProvider.phoneNode,
-                        textInputType: TextInputType.emailAddress,
-                        controller: authProvider.emailController,
-                        textInputAction: TextInputAction.next,
-                      )),
+                  // SizedBox(height: Dimensions.PADDING_SIZE_SMALL),
+                  // Container(
+                  //     margin: EdgeInsets.only(
+                  //         left: Dimensions.PADDING_SIZE_LARGE,
+                  //         right: Dimensions.PADDING_SIZE_LARGE,
+                  //         bottom: Dimensions.PADDING_SIZE_SMALL),
+                  //     child: CustomTextField(
+                  //       border: true,
+                  //       hintText: getTranslated('email_address', context),
+                  //       focusNode: authProvider.emailNode,
+                  //       nextNode: authProvider.phoneNode,
+                  //       textInputType: TextInputType.emailAddress,
+                  //       controller: authProvider.emailController,
+                  //       textInputAction: TextInputAction.next,
+                  //     )),
                   SizedBox(height: Dimensions.PADDING_SIZE_EXTRA_SMALL),
                   Container(
                     margin: EdgeInsets.only(
