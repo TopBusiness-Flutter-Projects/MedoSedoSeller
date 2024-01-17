@@ -16,6 +16,8 @@ import 'package:medosedo_vendor/view/screens/menu/menu_screen.dart';
 import 'package:medosedo_vendor/view/screens/order/order_screen.dart';
 import 'package:medosedo_vendor/view/screens/refund/refund_screen.dart';
 
+import '../home/webview_app.dart';
+
 class DashboardScreen extends StatefulWidget {
   @override
   _DashboardScreenState createState() => _DashboardScreenState();
@@ -92,19 +94,25 @@ class _DashboardScreenState extends State<DashboardScreen> {
             _barItem(Images.home, getTranslated('home', context), 0),
             _barItem(Images.order, getTranslated('my_order', context), 1),
             _barItem(Images.refund, getTranslated('refund', context), 2),
-            _barItem(Images.menu, getTranslated('menu', context), 3)
+            _barItem(Images.shop_product, 'تسوق الان', 3),
+            _barItem(Images.menu, getTranslated('menu', context), 4),
           ],
           onTap: (int index) {
-            if (index != 3) {
-              setState(() {
-                _setPage(index);
-              });
-            } else {
+            if (index == 3) {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => WebViewApplicationSeller()));
+            } else if (index == 4) {
               showModalBottomSheet(
                   context: context,
                   isScrollControlled: true,
                   backgroundColor: Colors.transparent,
                   builder: (con) => MenuBottomSheet());
+            } else {
+              setState(() {
+                _setPage(index);
+              });
             }
           },
         ),

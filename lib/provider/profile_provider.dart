@@ -32,7 +32,7 @@ class ProfileProvider with ChangeNotifier {
   int? methodSelectedIndex = 0;
   List<int?> methodsIds = [];
 
-  Future<ResponseModel> getSellerInfo(BuildContext context) async {
+  Future<SellerModel> getSellerInfo(BuildContext context) async {
     ResponseModel _responseModel;
     ApiResponse apiResponse = await profileRepo!.getSellerInfo();
     if (apiResponse.response != null &&
@@ -53,7 +53,7 @@ class ProfileProvider with ChangeNotifier {
       ApiChecker.checkApi(context, apiResponse);
     }
     notifyListeners();
-    return _responseModel;
+    return _userInfoModel!;
   }
 
   Future<ResponseModel> updateUserInfo(SellerModel updateUserModel,

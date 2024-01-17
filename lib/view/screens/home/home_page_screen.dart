@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:medosedo_vendor/data/model/response/product_model.dart';
@@ -19,9 +20,8 @@ import 'package:medosedo_vendor/view/screens/home/widget/stock_out_product_widge
 import 'package:medosedo_vendor/view/screens/product/most_popular_product.dart';
 import 'package:medosedo_vendor/view/screens/product/top_selling_product.dart';
 import 'package:medosedo_vendor/view/screens/top_delivery_man/top_delivery_man_view.dart';
-
-import '../../base/custom_bottom_sheet.dart';
 import '../addProduct/add_product_screen.dart';
+import 'webview_app.dart';
 
 class HomePageScreen extends StatefulWidget {
   final Function? callback;
@@ -63,11 +63,24 @@ class _HomePageScreenState extends State<HomePageScreen> {
 
     super.initState();
   }
+
 // ahmed elsapagh
   @override
   Widget build(BuildContext context) {
     double limitedStockCardHeight = MediaQuery.of(context).size.width / 1.4;
     return Scaffold(
+      // floatingActionButton: FloatingActionButton.extended(
+      //   backgroundColor: Colors.white,
+      //   // elevation: 2,
+
+      //   label: Text('تسوق الان'),
+      //   onPressed: () {
+      //     Navigator.push(
+      //         context,
+      //         MaterialPageRoute(
+      //             builder: (context) => WebViewApplicationSeller()));
+      //   },
+      // ),
       backgroundColor: ColorResources.getHomeBg(context),
       body: Consumer<OrderProvider>(
         builder: (context, order, child) {
@@ -93,22 +106,36 @@ class _HomePageScreenState extends State<HomePageScreen> {
                         title:
                             Image.asset(Images.logo_with_app_name, height: 35),
                         actions: [
-                          Padding(
-                            padding:
-                                const EdgeInsets.symmetric(horizontal: 8.0),
-                            child: InkWell(
-                              onTap: () {
+                          Container(
+                            margin: EdgeInsets.symmetric(vertical: 5),
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 8, vertical: 2),
+                            child: MaterialButton(
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(8)),
+                              padding: EdgeInsets.all(10),
+                              color: Colors.blue,
+                              onPressed: () {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
                                         builder: (_) => AddProductScreen()));
                               },
-                              child: Icon(
-                                Icons.add_circle,
-                                color: Colors.blue,
+                              child: Text(
+                                'أضف منتج',
+                                style: TextStyle(color: Colors.white),
                               ),
                             ),
-                          )
+                          ),
+                          // IconButton(
+                          //     onPressed: () {
+                          //       Navigator.push(
+                          //           context,
+                          //           MaterialPageRoute(
+                          //               builder: (context) =>
+                          //                   WebViewApplicationSeller()));
+                          //     },
+                          //     icon: Icon(CupertinoIcons.shopping_cart))
                         ],
                       ),
                       SliverToBoxAdapter(
