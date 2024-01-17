@@ -20,12 +20,14 @@ class SellerModel {
   int? productCount;
   int? ordersCount;
   Wallet? wallet;
+  int? isFactory;
 
   SellerModel(
       {this.id,
       this.fName,
       this.lName,
       this.phone,
+      this.isFactory,
       this.image,
       this.email,
       this.password,
@@ -51,6 +53,7 @@ class SellerModel {
     phone = json['phone'];
     image = json['image'];
     email = json['email'];
+    isFactory = json['is_factory'];
     password = json['password'];
     status = json['status'];
     rememberToken = json['remember_token'];
@@ -86,6 +89,7 @@ class SellerModel {
     data['l_name'] = this.lName;
     data['phone'] = this.phone;
     data['image'] = this.image;
+    data['is_factory'] = this.isFactory;
     data['email'] = this.email;
     data['password'] = this.password;
     data['status'] = this.status;

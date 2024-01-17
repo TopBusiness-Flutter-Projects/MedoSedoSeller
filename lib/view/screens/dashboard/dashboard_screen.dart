@@ -81,41 +81,87 @@ class _DashboardScreenState extends State<DashboardScreen> {
       },
       child: Scaffold(
         key: _scaffoldKey,
-        bottomNavigationBar: BottomNavigationBar(
-          selectedItemColor: Theme.of(context).primaryColor,
-          unselectedItemColor: ColorResources.HINT_TEXT_COLOR,
-          selectedFontSize: Dimensions.FONT_SIZE_SMALL,
-          unselectedFontSize: Dimensions.FONT_SIZE_SMALL,
-          selectedLabelStyle: robotoBold,
-          showUnselectedLabels: true,
-          currentIndex: _pageIndex,
-          type: BottomNavigationBarType.fixed,
-          items: [
-            _barItem(Images.home, getTranslated('home', context), 0),
-            _barItem(Images.order, getTranslated('my_order', context), 1),
-            _barItem(Images.refund, getTranslated('refund', context), 2),
-            _barItem(Images.shop_product, 'تسوق الان', 3),
-            _barItem(Images.menu, getTranslated('menu', context), 4),
-          ],
-          onTap: (int index) {
-            if (index == 3) {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => WebViewApplicationSeller()));
-            } else if (index == 4) {
-              showModalBottomSheet(
-                  context: context,
-                  isScrollControlled: true,
-                  backgroundColor: Colors.transparent,
-                  builder: (con) => MenuBottomSheet());
-            } else {
-              setState(() {
-                _setPage(index);
-              });
-            }
-          },
-        ),
+        bottomNavigationBar: (Provider.of<ProfileProvider>(context,
+                        listen: false)
+                    .userInfoModel!
+                    .isFactory ==
+                0)
+            ? BottomNavigationBar(
+                selectedItemColor: Theme.of(context).primaryColor,
+                unselectedItemColor: ColorResources.HINT_TEXT_COLOR,
+                selectedFontSize: Dimensions.FONT_SIZE_SMALL,
+                unselectedFontSize: Dimensions.FONT_SIZE_SMALL,
+                selectedLabelStyle: robotoBold,
+                showUnselectedLabels: true,
+                currentIndex: _pageIndex,
+                type: BottomNavigationBarType.fixed,
+                items: [
+                  _barItem(Images.home, getTranslated('home', context), 0),
+                  _barItem(Images.order, getTranslated('my_order', context), 1),
+                  _barItem(Images.refund, getTranslated('refund', context), 2),
+                  _barItem(Images.shop_product, 'تسوق الان', 3),
+                  _barItem(Images.menu, getTranslated('menu', context), 4),
+                ],
+                onTap: (int index) {
+                  if (index == 3 &&
+                      Provider.of<ProfileProvider>(context, listen: false)
+                              .userInfoModel!
+                              .isFactory ==
+                          0) {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => WebViewApplicationSeller()));
+                  } else if (index == 4) {
+                    showModalBottomSheet(
+                        context: context,
+                        isScrollControlled: true,
+                        backgroundColor: Colors.transparent,
+                        builder: (con) => MenuBottomSheet());
+                  } else {
+                    setState(() {
+                      _setPage(index);
+                    });
+                  }
+                },
+              )
+            : BottomNavigationBar(
+                selectedItemColor: Theme.of(context).primaryColor,
+                unselectedItemColor: ColorResources.HINT_TEXT_COLOR,
+                selectedFontSize: Dimensions.FONT_SIZE_SMALL,
+                unselectedFontSize: Dimensions.FONT_SIZE_SMALL,
+                selectedLabelStyle: robotoBold,
+                showUnselectedLabels: true,
+                currentIndex: _pageIndex,
+                type: BottomNavigationBarType.fixed,
+                items: [
+                  _barItem(Images.home, getTranslated('home', context), 0),
+                  _barItem(Images.order, getTranslated('my_order', context), 1),
+                  _barItem(Images.refund, getTranslated('refund', context), 2),
+                  _barItem(Images.menu, getTranslated('menu', context), 3),
+                ],
+                onTap: (int index) {
+                  if (index == 3) {
+                 showModalBottomSheet(
+                        context: context,
+                        isScrollControlled: true,
+                        backgroundColor: Colors.transparent,
+                        builder: (con) => MenuBottomSheet());
+                  }
+                  // else if (index == 4) {
+                    // showModalBottomSheet(
+                    //     context: context,
+                    //     isScrollControlled: true,
+                    //     backgroundColor: Colors.transparent,
+                    //     builder: (con) => MenuBottomSheet());
+                  // }
+                  else {
+                    setState(() {
+                      _setPage(index);
+                    });
+                  }
+                },
+              ),
         body: PageView.builder(
           controller: _pageController,
           itemCount: _screens.length,

@@ -96,13 +96,7 @@ class MenuBottomSheet extends StatelessWidget {
           title: getTranslated('message', context),
           onTap: () => Navigator.push(
               context, MaterialPageRoute(builder: (_) => InboxScreen()))),
-      CustomBottomSheet(
-          image: Images.shop_product,
-          title: 'تسوق الان',
-          onTap: () => Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) => WebViewApplicationSeller()))),
+
       /*FloatingActionButton.extended(
         backgroundColor: Colors.white,
         // elevation: 2,
