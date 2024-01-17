@@ -24,6 +24,8 @@ import 'package:medosedo_vendor/view/screens/shop/shop_screen.dart';
 import 'package:medosedo_vendor/view/screens/wallet/wallet_screen.dart';
 import 'package:medosedo_vendor/view/screens/bank_info/bank_info_view.dart';
 
+import '../home/webview_app.dart';
+
 class MenuBottomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -94,6 +96,25 @@ class MenuBottomSheet extends StatelessWidget {
           title: getTranslated('message', context),
           onTap: () => Navigator.push(
               context, MaterialPageRoute(builder: (_) => InboxScreen()))),
+      CustomBottomSheet(
+          image: Images.shop_product,
+          title: 'تسوق الان',
+          onTap: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => WebViewApplicationSeller()))),
+      /*FloatingActionButton.extended(
+        backgroundColor: Colors.white,
+        // elevation: 2,
+
+        label: Text('تسوق الان'),
+        onPressed: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => WebViewApplicationSeller()));
+        },
+      ) */
       CustomBottomSheet(
           image: Images.bank_info,
           title: getTranslated('bank_info', context),

@@ -2,7 +2,7 @@ import 'package:medosedo_vendor/data/model/response/language_model.dart';
 import 'package:medosedo_vendor/utill/images.dart';
 
 class AppConstants {
-  static const String APP_NAME = 'Seller App';
+  static const String APP_NAME = 'Medo Sedo Vendor';
   static const String APP_VERSION = '13.1';
   static const String COMPANY_NAME = 'Medosedo';
   static const String BASE_URL = 'https://medosedo.com';
