@@ -22,6 +22,7 @@ class SellerModel {
   Wallet? wallet;
   String? isFactory;
 
+
   SellerModel(
       {this.id,
       this.fName,
