@@ -34,7 +34,6 @@ class _DashboardScreenState extends State<DashboardScreen> {
   void initState() {
     super.initState();
     Provider.of<ProfileProvider>(context, listen: false).getSellerInfo(context);
-
     _screens = [
       HomePageScreen(callback: () {
         setState(() {
@@ -79,51 +78,87 @@ class _DashboardScreenState extends State<DashboardScreen> {
           return true;
         }
       },
-      child: Scaffold(
-        key: _scaffoldKey,
-        bottomNavigationBar: BottomNavigationBar(
-          selectedItemColor: Theme.of(context).primaryColor,
-          unselectedItemColor: ColorResources.HINT_TEXT_COLOR,
-          selectedFontSize: Dimensions.FONT_SIZE_SMALL,
-          unselectedFontSize: Dimensions.FONT_SIZE_SMALL,
-          selectedLabelStyle: robotoBold,
-          showUnselectedLabels: true,
-          currentIndex: _pageIndex,
-          type: BottomNavigationBarType.fixed,
-          items: [
-            _barItem(Images.home, getTranslated('home', context), 0),
-            _barItem(Images.order, getTranslated('my_order', context), 1),
-            _barItem(Images.refund, getTranslated('refund', context), 2),
-            _barItem(Images.shop_product, 'تسوق الان', 3),
-            _barItem(Images.menu, getTranslated('menu', context), 4),
-          ],
-          onTap: (int index) {
-            if (index == 3) {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => WebViewApplicationSeller()));
-            } else if (index == 4) {
-              showModalBottomSheet(
-                  context: context,
-                  isScrollControlled: true,
-                  backgroundColor: Colors.transparent,
-                  builder: (con) => MenuBottomSheet());
-            } else {
-              setState(() {
-                _setPage(index);
-              });
-            }
-          },
-        ),
-        body: PageView.builder(
-          controller: _pageController,
-          itemCount: _screens.length,
-          physics: NeverScrollableScrollPhysics(),
-          itemBuilder: (context, index) {
-            return _screens[index];
-          },
-        ),
+      child: Consumer<ProfileProvider>(
+        builder: (context, profile, child) {
+          return Scaffold(
+            key: _scaffoldKey,
+            bottomNavigationBar: profile.userInfoModel == null
+                ? null
+                : BottomNavigationBar(
+                    selectedItemColor: Theme.of(context).primaryColor,
+                    unselectedItemColor: ColorResources.HINT_TEXT_COLOR,
+                    selectedFontSize: Dimensions.FONT_SIZE_SMALL,
+                    unselectedFontSize: Dimensions.FONT_SIZE_SMALL,
+                    selectedLabelStyle: robotoBold,
+                    showUnselectedLabels: true,
+                    currentIndex: _pageIndex,
+                    type: BottomNavigationBarType.fixed,
+                    items: profile.userInfoModel?.isFactory == "1"
+                        ? [
+                            _barItem(
+                                Images.home, getTranslated('home', context), 0),
+                            _barItem(Images.order,
+                                getTranslated('my_order', context), 1),
+                            _barItem(Images.refund,
+                                getTranslated('refund', context), 2),
+                            _barItem(
+                                Images.menu, getTranslated('menu', context), 3),
+                          ]
+                        : [
+                            _barItem(
+                                Images.home, getTranslated('home', context), 0),
+                            _barItem(Images.order,
+                                getTranslated('my_order', context), 1),
+                            _barItem(Images.refund,
+                                getTranslated('refund', context), 2),
+                            _barItem(Images.shop_product, 'تسوق الان', 3),
+                            _barItem(
+                                Images.menu, getTranslated('menu', context), 4),
+                          ],
+                    onTap: (int index) {
+                      if (profile.userInfoModel?.isFactory == "1") {
+                        if (index == 3) {
+                          showModalBottomSheet(
+                              context: context,
+                              isScrollControlled: true,
+                              backgroundColor: Colors.transparent,
+                              builder: (con) => MenuBottomSheet());
+                        } else {
+                          setState(() {
+                            _setPage(index);
+                          });
+                        }
+                      } else {
+                        if (index == 3) {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      WebViewApplicationSeller()));
+                        } else if (index == 4) {
+                          showModalBottomSheet(
+                              context: context,
+                              isScrollControlled: true,
+                              backgroundColor: Colors.transparent,
+                              builder: (con) => MenuBottomSheet());
+                        } else {
+                          setState(() {
+                            _setPage(index);
+                          });
+                        }
+                      }
+                    },
+                  ),
+            body: PageView.builder(
+              controller: _pageController,
+              itemCount: _screens.length,
+              physics: NeverScrollableScrollPhysics(),
+              itemBuilder: (context, index) {
+                return _screens[index];
+              },
+            ),
+          );
+        },
       ),
     );
   }

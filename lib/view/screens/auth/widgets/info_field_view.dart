@@ -1,5 +1,4 @@
 import 'dart:io';
-import 'package:country_code_picker/country_code.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -12,7 +11,6 @@ import 'package:medosedo_vendor/utill/images.dart';
 import 'package:medosedo_vendor/utill/styles.dart';
 import 'package:medosedo_vendor/view/base/textfeild/custom_pass_textfeild.dart';
 import 'package:medosedo_vendor/view/base/textfeild/custom_text_feild.dart';
-import 'package:medosedo_vendor/view/screens/forgetPassword/widget/code_picker_widget.dart';
 import 'package:medosedo_vendor/view/screens/more/html_view_screen.dart';
 
 class InfoFieldVIew extends StatefulWidget {
@@ -219,6 +217,25 @@ class _InfoFieldVIewState extends State<InfoFieldVIew> {
                   SizedBox(height: Dimensions.PADDING_SIZE_SMALL),
                 ],
               )),
+            SizedBox(width: Dimensions.PADDING_SIZE_SMALL),
+//!   isFactory
+
+            Container(
+              padding: EdgeInsets.all(10.0),
+              child: Row(
+                children: <Widget>[
+                  Flexible(fit: FlexFit.tight, child: Text('هل انت مصنع ؟')),
+                  Checkbox(
+                      value: authProvider.isFactory == 0 ? false : true,
+                      activeColor: Theme.of(context).primaryColor,
+                      onChanged: (newValue) {
+                        setState(() {
+                          authProvider.isFactory = newValue == true ? 1 : 0;
+                        });
+                      }),
+                ],
+              ),
+            ),
             if (widget.isShopInfo)
               Container(
                 child: Column(

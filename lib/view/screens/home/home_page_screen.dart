@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:medosedo_vendor/data/model/response/product_model.dart';
@@ -84,7 +83,10 @@ class _HomePageScreenState extends State<HomePageScreen> {
       backgroundColor: ColorResources.getHomeBg(context),
       body: Consumer<OrderProvider>(
         builder: (context, order, child) {
-          return order.orderModel != null
+          return (order.orderModel != null ||
+                  Provider.of<ProfileProvider>(context, listen: false)
+                          .userInfoModel !=
+                      null)
               ? RefreshIndicator(
                   onRefresh: () async {
                     Provider.of<OrderProvider>(context, listen: false)

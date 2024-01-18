@@ -6,7 +6,16 @@ class RegisterModel {
   String? password;
   String? confirmPassword;
   String? shopName;
+  int? isFactory;
   String? shopAddress;
-  RegisterModel({this.fName, this.lName, this.phone, this.email, this.password, this.confirmPassword, this.shopName, this.shopAddress});
-
+  RegisterModel(
+      {this.fName,
+      this.lName,
+      this.phone,
+      this.isFactory = 0,
+      this.email,
+      this.password,
+      this.confirmPassword,
+      this.shopName,
+      this.shopAddress});
 }

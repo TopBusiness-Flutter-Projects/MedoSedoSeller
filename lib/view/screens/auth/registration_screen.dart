@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:provider/provider.dart';
 import 'package:medosedo_vendor/data/model/body/register_model.dart';
-import 'package:medosedo_vendor/helper/email_checker.dart';
 import 'package:medosedo_vendor/localization/language_constrants.dart';
 import 'package:medosedo_vendor/provider/auth_provider.dart';
 import 'package:medosedo_vendor/utill/dimensions.dart';
@@ -368,6 +367,8 @@ class _RegistrationScreenState extends State<RegistrationScreen>
                                                 fName: authProvider
                                                     .firstNameController.text
                                                     .trim(),
+                                                isFactory:
+                                                    authProvider.isFactory,
                                                 lName: authProvider
                                                     .lastNameController.text
                                                     .trim(),

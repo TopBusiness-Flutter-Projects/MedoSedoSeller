@@ -41,6 +41,7 @@ class ProfileProvider with ChangeNotifier {
       _userId = _userInfoModel!.id;
       _profileImage = _userInfoModel!.image;
       _responseModel = ResponseModel(true, 'successful');
+      print('isFactory : ${_userInfoModel!.isFactory}');
     } else {
       String? _errorMessage;
       if (apiResponse.error is String) {

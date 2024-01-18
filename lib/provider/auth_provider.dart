@@ -46,6 +46,7 @@ class AuthProvider with ChangeNotifier {
   FocusNode confirmPasswordNode = FocusNode();
   FocusNode shopNameNode = FocusNode();
   FocusNode shopAddressNode = FocusNode();
+  int isFactory = 0;
 
   Future<ApiResponse> login(BuildContext context,
       {String? emailAddress, String? password}) async {
