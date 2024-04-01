@@ -75,7 +75,6 @@ class _ProductViewState extends State<ProductView> {
   Widget build(BuildContext context) {
     String userId =
         Provider.of<ProfileProvider>(context, listen: false).userId.toString();
-
     return RefreshIndicator(
       onRefresh: () async {
         Provider.of<ProductProvider>(context, listen: false)

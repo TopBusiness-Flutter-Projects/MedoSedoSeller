@@ -78,8 +78,8 @@ class _StockOutProductWidgetState extends State<StockOutProductWidget> {
 
                   );});
               },
-              backgroundColor: Theme.of(context).errorColor.withOpacity(.05),
-              foregroundColor: Theme.of(context).errorColor,
+              backgroundColor: Theme.of(context).colorScheme.error.withOpacity(.05),
+              foregroundColor: Theme.of(context).colorScheme.error,
               icon: Icons.delete_forever_rounded,
               label: getTranslated('delete', context),
             ),
@@ -114,8 +114,8 @@ class _StockOutProductWidgetState extends State<StockOutProductWidget> {
 
                   );});
               },
-              backgroundColor: Theme.of(context).errorColor.withOpacity(.05),
-              foregroundColor: Theme.of(context).errorColor,
+              backgroundColor: Theme.of(context).colorScheme.error.withOpacity(.05),
+              foregroundColor: Theme.of(context).colorScheme.error,
               icon: Icons.delete_forever_rounded,
               label: getTranslated('delete', context),
             ),
@@ -188,7 +188,7 @@ class _StockOutProductWidgetState extends State<StockOutProductWidget> {
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(Dimensions.PADDING_SIZE_EXTRA_SMALL),
                                   color :widget.productModel.currentStock == 0?
-                                  Theme.of(context).errorColor:
+                                  Theme.of(context).colorScheme.error:
                                   Theme.of(context).colorScheme.onSecondary,
                                 ),
 

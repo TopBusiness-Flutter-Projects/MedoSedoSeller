@@ -16,7 +16,7 @@ class ProductRepo {
       final response = await dioClient!.get(
         AppConstants.SELLER_PRODUCT_URI +
             sellerId +
-            '/all-products?limit=10&&offset=$offset&search=$search',
+            '/all-products/?limit=10&offset=$offset&search=$search',
         options: Options(headers: {AppConstants.LANG_KEY: languageCode}),
       );
       return ApiResponse.withSuccess(response);
@@ -155,6 +155,17 @@ class ProductRepo {
         '${AppConstants.UPDATE_PRODUCT_Price}$productId',
         data: {"unit_price": unitPrice},
       );
+      return ApiResponse.withSuccess(response);
+    } catch (e) {
+      return ApiResponse.withError(ApiErrorHandler.getMessage(e));
+    }
+  }
+
+  Future<ApiResponse> deleteProduct(int? productID) async {
+    try {
+      final response = await dioClient!.post(
+          '${AppConstants.DELETE_PRODUCT_URI}/$productID',
+          data: {'_method': 'delete'});
       return ApiResponse.withSuccess(response);
     } catch (e) {
       return ApiResponse.withError(ApiErrorHandler.getMessage(e));

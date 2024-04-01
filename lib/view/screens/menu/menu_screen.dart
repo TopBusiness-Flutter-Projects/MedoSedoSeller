@@ -20,7 +20,6 @@ import 'package:medosedo_vendor/view/screens/product/product_list_screen.dart';
 import 'package:medosedo_vendor/view/screens/profile/profile_view_screen.dart';
 import 'package:medosedo_vendor/view/screens/review/product_review_screen.dart';
 import 'package:medosedo_vendor/view/screens/settings/setting_screen.dart';
-import 'package:medosedo_vendor/view/screens/shop/shop_screen.dart';
 import 'package:medosedo_vendor/view/screens/wallet/wallet_screen.dart';
 import 'package:medosedo_vendor/view/screens/bank_info/bank_info_view.dart';
 
@@ -81,6 +80,12 @@ class MenuBottomSheet extends StatelessWidget {
             title: getTranslated('pos', context),
             onTap: () => Navigator.push(
                 context, MaterialPageRoute(builder: (_) => NavBarScreen()))),
+
+      CustomBottomSheet(
+          image: Images.delivery_man_icon,
+          title: getTranslated('deliveryman', context),
+          onTap: () => Navigator.push(context,
+              MaterialPageRoute(builder: (_) => DeliveryManSetupScreen()))),
       CustomBottomSheet(
           image: Images.settings,
           title: getTranslated('settings', context),

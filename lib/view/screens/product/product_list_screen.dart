@@ -60,7 +60,7 @@ class _ProductListMenuScreenState extends State<ProductListMenuScreen> {
                   ),
                 );
               })),
-          Expanded(child: ProductView(sellerId: userId))
+          Flexible(child: ProductView(sellerId: userId))
         ],
       ),
     );

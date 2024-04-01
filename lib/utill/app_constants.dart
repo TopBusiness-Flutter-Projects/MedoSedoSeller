@@ -172,6 +172,8 @@ class AppConstants {
       '/api/v3/seller/withdraw-method-list';
   static const String UPDATE_PRODUCT_Price =
       '/api/v3/seller/products/updatePriceProduct/';
+  static const String ASSIGN_DELEVERY_MAN =
+      '/api/v3/seller/orders/assign-delivery-man';
   static const String PENDING = 'pending';
   static const String CONFIRMED = 'confirmed';
   static const String PROCESSING = 'processing';

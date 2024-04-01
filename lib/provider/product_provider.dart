@@ -383,18 +383,15 @@ class ProductProvider extends ChangeNotifier {
     ApiResponse apiResponse =
         await productRepo!.updateProductUnitPrice(productId, unitPrice!);
     if (apiResponse.response != null &&
-        apiResponse.response!.statusCode == 200) {
-      // int? userId =
-      //     Provider.of<ProfileProvider>(context!, listen: false).userId;
-      // Provider.of<ProductProvider>(context, listen: false)
-      //     .initSellerProductList(
-      //   userId.toString(),
-      //   1,
-      //   context,
-      //   'en',
-      //   '',
-      // );
-    }
+        apiResponse.response!.statusCode == 200) {}
+  }
+
+  //! delete
+  Future<void> deleteProduct(
+      {required int productId, BuildContext? context}) async {
+    ApiResponse apiResponse = await productRepo!.deleteProduct(productId);
+    if (apiResponse.response != null &&
+        apiResponse.response!.statusCode == 200) {}
   }
 
   Future<void> productStatusOnOff(

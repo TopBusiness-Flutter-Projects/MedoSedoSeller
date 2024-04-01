@@ -38,8 +38,8 @@ class DeliveryManCardWidget extends StatelessWidget {
               onPressed: (value){
                 Provider.of<DeliveryManProvider>(context, listen: false).deleteDeliveryMan(context, deliveryMan!.id);
               },
-              backgroundColor: Theme.of(context).errorColor.withOpacity(.05),
-              foregroundColor: Theme.of(context).errorColor,
+              backgroundColor: Theme.of(context).colorScheme.error.withOpacity(.05),
+              foregroundColor: Theme.of(context).colorScheme.error,
               icon: Icons.delete_forever_rounded,
               label: getTranslated('delete', context),
             ),
@@ -62,8 +62,8 @@ class DeliveryManCardWidget extends StatelessWidget {
               onPressed: (value){
                 Provider.of<DeliveryManProvider>(context, listen: false).deleteDeliveryMan(context, deliveryMan!.id);
               },
-              backgroundColor: Theme.of(context).errorColor.withOpacity(.05),
-              foregroundColor: Theme.of(context).errorColor,
+              backgroundColor: Theme.of(context).colorScheme.error.withOpacity(.05),
+              foregroundColor: Theme.of(context).colorScheme.error,
               icon: Icons.delete_forever_rounded,
               label: getTranslated('delete', context),
             ),
@@ -174,11 +174,11 @@ class DeliveryManCardWidget extends StatelessWidget {
                     child: Row(mainAxisSize: MainAxisSize.min,children: [
                       deliveryMan!.isOnline == 1?
                       Icon(Icons.check_circle, size: Dimensions.ICON_SIZE_DEFAULT, color: Colors.green):
-                      Icon(Icons.cancel, size: Dimensions.ICON_SIZE_DEFAULT, color: Theme.of(context).errorColor),
+                      Icon(Icons.cancel, size: Dimensions.ICON_SIZE_DEFAULT, color: Theme.of(context).colorScheme.error),
                       SizedBox(width: Dimensions.PADDING_SIZE_VERY_TINY),
                       deliveryMan!.isOnline == 1?
                       Text(getTranslated('online', context)!,style: robotoMedium.copyWith(color: Colors.green),):
-                      Text(getTranslated('offline', context)!,style: robotoMedium.copyWith(color: Theme.of(context).errorColor),)
+                      Text(getTranslated('offline', context)!,style: robotoMedium.copyWith(color: Theme.of(context).colorScheme.error),)
                     ],),
                   ),
                 )

@@ -697,7 +697,8 @@
   "taxModel": "النموذج الضريبي",
   "image_upload_failed": "فشل رفع الصوره ",
   "product_add_failed": "فشل اضافة المنتج",
-  "Continue": "إكمال"
+  "Continue": "إكمال",  "deleviry_man":"اختر رجل التوصيل "
+
 }
 
 

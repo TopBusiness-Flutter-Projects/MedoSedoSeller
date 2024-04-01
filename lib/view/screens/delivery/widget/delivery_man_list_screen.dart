@@ -20,51 +20,61 @@ class _DeliveryManListScreenState extends State<DeliveryManListScreen> {
   final TextEditingController searchController = TextEditingController();
   @override
   void initState() {
-    Provider.of<DeliveryManProvider>(context, listen: false).deliveryManListURI(context, 1,'');
+    Provider.of<DeliveryManProvider>(context, listen: false)
+        .deliveryManListURI(context: context, offset: 1, search: '');
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(title: getTranslated('delivery_man_list', context),isBackButtonExist: true,),
+      appBar: CustomAppBar(
+        title: getTranslated('delivery_man_list', context),
+        isBackButtonExist: true,
+      ),
       body: RefreshIndicator(
-        onRefresh: () async{
-          Provider.of<DeliveryManProvider>(context, listen: false).deliveryManListURI(context, 1,'');
-         // return true;
+        onRefresh: () async {
+          Provider.of<DeliveryManProvider>(context, listen: false)
+              .deliveryManListURI(context: context, offset: 1, search: '');
+          // return true;
         },
         child: CustomScrollView(
-        slivers: [
-          SliverPersistentHeader(delegate: SliverDelegate(
-            height: 80,
-            child : Padding(
-              padding: const EdgeInsets.fromLTRB(Dimensions.PADDING_SIZE_MEDIUM, Dimensions.PADDING_SIZE_DEFAULT, Dimensions.PADDING_SIZE_MEDIUM, Dimensions.PADDING_SIZE_DEFAULT),
-              child: CustomSearchField(
-                controller: searchController,
-                hint: getTranslated('search', context),
-                prefix: Images.icons_search,
-                iconPressed: () => (){},
-                onSubmit: (text) => (){},
-                onChanged: (value){
-                  Provider.of<DeliveryManProvider>(context, listen: false).deliveryManListURI(context, 1, value);
-                },
-                isFilter: false,
+          slivers: [
+            SliverPersistentHeader(
+                delegate: SliverDelegate(
+                    height: 80,
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(
+                          Dimensions.PADDING_SIZE_MEDIUM,
+                          Dimensions.PADDING_SIZE_DEFAULT,
+                          Dimensions.PADDING_SIZE_MEDIUM,
+                          Dimensions.PADDING_SIZE_DEFAULT),
+                      child: CustomSearchField(
+                        controller: searchController,
+                        hint: getTranslated('search', context),
+                        prefix: Images.icons_search,
+                        iconPressed: () => () {},
+                        onSubmit: (text) => () {},
+                        onChanged: (value) {
+                          Provider.of<DeliveryManProvider>(context,
+                                  listen: false)
+                              .deliveryManListURI(
+                                  context: context, offset: 1, search: value);
+                        },
+                        isFilter: false,
+                      ),
+                    ))),
+            SliverToBoxAdapter(
+              child: Column(
+                children: [
+                  DeliveryManListView(),
+                  SizedBox(height: Dimensions.PADDING_SIZE_SMALL)
+                ],
               ),
             )
-          )),
-          SliverToBoxAdapter(
-            child: Column(
-               children: [
-
-                 DeliveryManListView(),
-                 SizedBox(height: Dimensions.PADDING_SIZE_SMALL)
-               ],
-            ),
-          )
-        ],
-      ),),
+          ],
+        ),
+      ),
     );
   }
 }
-
-
