@@ -9,7 +9,8 @@
   "branch_name": "اسم الفرع",
   "holder_name": "اسم الحامل",
   "account_no": "رقم الحساب",
-  "bank_name_hint": "مثال: بنك المدينة",
+  "bank_name_hint": "مثال: بنك المدينة",  "notification":"الاشعارات",
+
   "branch_name_hint": "مثال: فرع تكساس",
   "holder_name_hint": "مثال: John Doe",
   "account_no_hint": "مثال: 7648654856845674",

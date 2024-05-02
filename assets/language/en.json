@@ -9,7 +9,7 @@
   "branch_name": "Branch Name",
   "holder_name": "A/C Holder Name",
   "account_no": "A/C No.",
-  "bank_name_hint": "Ex: City Bank",
+  "bank_name_hint": "Ex: City Bank",  "notification":"Notification",
   "branch_name_hint": "Ex: Texas Branch",
   "holder_name_hint": "Ex: John Doe",
   "account_no_hint": "Ex: 7648654856845674",

@@ -170,6 +170,8 @@ class AppConstants {
   static const String VACATION = '/api/v3/seller/vacation-add';
   static const String DYNAMIC_WITHDRAW_METHOD =
       '/api/v3/seller/withdraw-method-list';
+  static const String NOTIFICATION_URI = '/api/v3/seller/getNotifications';
+
   static const String UPDATE_PRODUCT_Price =
       '/api/v3/seller/products/updatePriceProduct/';
   static const String ASSIGN_DELEVERY_MAN =

@@ -9,6 +9,8 @@ import 'package:medosedo_vendor/data/model/response/seller_info.dart';
 import 'package:medosedo_vendor/utill/app_constants.dart';
 import 'package:http/http.dart' as http;
 
+import '../model/body/notification.dart';
+
 class ProfileRepo {
   final DioClient? dioClient;
   final SharedPreferences? sharedPreferences;
@@ -89,6 +91,15 @@ class ProfileRepo {
     try {
       final response =
           await dioClient!.get('${AppConstants.DYNAMIC_WITHDRAW_METHOD}');
+      return ApiResponse.withSuccess(response);
+    } catch (e) {
+      return ApiResponse.withError(ApiErrorHandler.getMessage(e));
+    }
+  }
+
+  Future<ApiResponse> getAllnotification() async {
+    try {
+      final response = await dioClient!.get(AppConstants.NOTIFICATION_URI);
       return ApiResponse.withSuccess(response);
     } catch (e) {
       return ApiResponse.withError(ApiErrorHandler.getMessage(e));

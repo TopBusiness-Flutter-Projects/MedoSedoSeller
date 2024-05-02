@@ -24,8 +24,14 @@ import 'package:medosedo_vendor/view/screens/wallet/wallet_screen.dart';
 import 'package:medosedo_vendor/view/screens/bank_info/bank_info_view.dart';
 
 import '../home/webview_app.dart';
+import '../notification/notification.dart';
 
-class MenuBottomSheet extends StatelessWidget {
+class MenuBottomSheet extends StatefulWidget {
+  @override
+  State<MenuBottomSheet> createState() => _MenuBottomSheetState();
+}
+
+class _MenuBottomSheetState extends State<MenuBottomSheet> {
   @override
   Widget build(BuildContext context) {
     List<CustomBottomSheet> _activateMenu = [
@@ -210,6 +216,11 @@ class MenuBottomSheet extends StatelessWidget {
                             .configModel!
                             .returnPolicy!
                             .content)))),
+      CustomBottomSheet(
+          image: "assets/image/bell.png",
+          title: getTranslated('notification', context),
+          onTap: () => Navigator.push(context,
+              MaterialPageRoute(builder: (_) => NotificationScreen()))),
       CustomBottomSheet(
           image: Images.logOut,
           title: getTranslated('logout', context),

@@ -11,6 +11,8 @@ import 'package:http/http.dart' as http;
 import 'package:medosedo_vendor/localization/language_constrants.dart';
 import 'package:medosedo_vendor/view/base/custom_snackbar.dart';
 
+import '../data/model/body/notification.dart';
+
 class ProfileProvider with ChangeNotifier {
   final ProfileRepo? profileRepo;
 
@@ -193,5 +195,20 @@ class ProfileProvider with ChangeNotifier {
     }
 
     notifyListeners();
+  }
+
+  List<NotificationModel> allNotifications = [];
+  Future<ApiResponse> getAllNotification(BuildContext context) async {
+    ApiResponse apiResponse = await profileRepo!.getAllnotification();
+    if (apiResponse.response != null &&
+        apiResponse.response!.statusCode == 200) {
+      allNotifications = [];
+      apiResponse.response!.data.forEach(
+          (noti) => allNotifications.add(NotificationModel.fromJson(noti)));
+    } else {
+      ApiChecker.checkApi(context, apiResponse);
+    }
+    notifyListeners();
+    return apiResponse;
   }
 }
